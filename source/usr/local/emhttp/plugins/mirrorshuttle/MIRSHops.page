@@ -1,0 +1,9 @@
+Menu="OtherSettings"
+Type="xmenu"
+Title="MirrorShuttle"
+Icon="magic"
+Tag="magic"
+Markdown="false"
+---
+
+<p>Welcome to MirrorShuttle.</p>

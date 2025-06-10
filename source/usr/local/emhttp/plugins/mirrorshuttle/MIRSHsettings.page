@@ -1,0 +1,62 @@
+Menu="MIRSHops:1"
+Title="MirrorShuttle Settings"
+Tag="sliders"
+Markdown="false"
+---
+<?
+/* Copyright Derek Macias (parts of code from NUT package)
+ * Copyright macester (parts of code from NUT package)
+ * Copyright gfjardim (parts of code from NUT package)
+ * Copyright SimonF (parts of code from NUT package)
+ * Copyright Dan Landon (parts of code from Web GUI)
+ * Copyright Bergware International (parts of code from Web GUI)
+ * Copyright Lime Technology (any and all other parts of Unraid)
+ *
+ * Copyright desertwitch (as author and maintainer of this file)
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License 2
+ * as published by the Free Software Foundation.
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ */
+require_once '/usr/local/emhttp/plugins/mirrorshuttle/include/mirsh_config.php';
+?>
+
+<form markdown="0" id="mirrorshuttle-settings" name="mirrorshuttle_settings" method="POST" action="/update.php" target="progressFrame">
+    <input type="hidden" id="mirsh-file" name="#file" value="mirrorshuttle/mirrorshuttle.cfg">
+    <input type="hidden" id="mirsh-cmd" name="#command" value="/usr/local/emhttp/plugins/mirrorshuttle/scripts/none">
+
+    <dl>
+        <dt>MirrorShuttle - Backend:</dt>
+        <dd>
+            <strong><?= isset($mirsh_backend) && $mirsh_backend ? $mirsh_backend : "n/a" ?></strong>
+        </dd>
+    </dl>
+
+    <dl>
+        <dt></dt>
+        <dd>
+            <input type="submit" id="btnApply" name="#apply" value="Apply">
+            <input type="button" value="Done" onclick="done()">
+            <input id="DEFAULT" type="submit" class="mirshtip" name="#default" value="Default" title="Reverts the configuration to default values.">
+        </dd>
+    </dl>
+
+</form>
+
+<script>
+$(function() {
+    showStatus('mirrorshuttle');
+
+    $('.mirshtip').tooltipster({
+        maxWidth: 300
+    });
+
+    if ( typeof caPluginUpdateCheck === "function" ) {
+        caPluginUpdateCheck("mirrorshuttle.plg",{name:"MirrorShuttle"});
+    }
+});
+</script>

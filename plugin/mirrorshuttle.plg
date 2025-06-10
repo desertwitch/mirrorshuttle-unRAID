@@ -1,0 +1,77 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "mirrorshuttle">
+<!ENTITY author    "desertwitch">
+<!ENTITY version   "2025.06.10">
+<!ENTITY launch    "Settings/MIRSHops">
+<!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/mirrorshuttle-unRAID/main">
+<!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
+<!ENTITY pkgURL    "&gitURL;/packages">
+<!ENTITY plgPATH   "/boot/config/plugins/&name;">
+<!ENTITY plgNAME   "mergerfsp-2025.02.26-x86_64-1">
+<!ENTITY plgMD5    "8e0e91e2a10c4791290fd9a824e919fc">
+<!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
+]>
+
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="" min="6.10.0" icon="magic">
+
+<CHANGES>
+## MirrorShuttle for UNRAID
+###2025.06.10
+- release note: welcome to the first version of the MirrorShuttle package.
+- release note: please report any problems in the support topic.
+</CHANGES>
+
+<!--
+install or upgrade dependency files
+-->
+<FILE Name="&plgPATH;/mergerfs-2.40.2-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/mergerfs-2.40.2-x86_64-1.txz</URL>
+<MD5>2507c8d46400015c5dad271e7127b42a</MD5>
+</FILE>
+
+<!--
+install or upgrade the plugin itself
+-->
+<FILE Name="&plgPATH;/&plgNAME;.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&gitURL;/archive/&plgNAME;.txz</URL>
+<MD5>&plgMD5;</MD5>
+</FILE>
+
+<!--
+run the post-installation scripts
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+echo ""
+echo "-------------------------------------------------------------"
+echo " MirrorShuttle for UNRAID has been installed."
+echo " Version: &version; / Plugin Maintainer: &author;"
+echo "-------------------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<!--
+definition for uninstallation of the plugin
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+killall mirrorshuttle >/dev/null 2>&amp;1
+
+removepkg &plgPATH;/*.txz
+
+rm -rf &plgPATH;
+rm -rf &emhttp;
+
+echo ""
+echo "-----------------------------------------------------------"
+echo " MirrorShuttle for UNRAID has been removed."
+echo " Version: &version; / Plugin Maintainer: &author;"
+echo "-----------------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+</PLUGIN>
