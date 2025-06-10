@@ -1,7 +1,7 @@
 <?xml version='1.0' standalone='yes'?>
 
 <!DOCTYPE PLUGIN [
-<!ENTITY name      "mirrorshuttlep">
+<!ENTITY name      "mirsht">
 <!ENTITY author    "desertwitch">
 <!ENTITY version   "2025.06.10">
 <!ENTITY launch    "Settings/MIRSHops">
@@ -22,14 +22,6 @@
 - release note: welcome to the first version of the MirrorShuttle package.
 - release note: please report any problems in the support topic.
 </CHANGES>
-
-<!--
-install or upgrade dependency files
--->
-<FILE Name="&plgPATH;/mergerfs-2.40.2-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
-<URL>&pkgURL;/mergerfs-2.40.2-x86_64-1.txz</URL>
-<MD5>2507c8d46400015c5dad271e7127b42a</MD5>
-</FILE>
 
 <!--
 install or upgrade the plugin itself

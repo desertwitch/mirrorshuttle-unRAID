@@ -25,8 +25,8 @@ Markdown="false"
 ?>
 
 <link type="text/css" rel="stylesheet" href="<?=autov('/webGui/styles/jquery.filetree.css');?>">
-<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirrorshuttlep/css/codemirror.min.css');?>">
-<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirrorshuttlep/css/dracula.min.css');?>">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirsht/css/codemirror.min.css');?>">
+<link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirsht/css/dracula.min.css');?>">
 
 <style type="text/css">
     .CodeMirror { border: 1px solid #eee; cursor: text; margin-top: 15px; margin-bottom: 10px; }
@@ -40,7 +40,7 @@ Markdown="false"
 <form id="editform" method="POST">
     <img id="editfolder" style="cursor:pointer;margin-left: 10px;" src="/webGui/images/explore.png" >
 
-    <input id="editfile" type="text" name="editfile" value="" readonly="" data-picktop="/boot/config/plugins/mirrorshuttlep" data-pickcloseonfile="true" data-pickfilter="yaml" data-pickroot="/boot/config/plugins/mirrorshuttlep" data-pickfolders="false" required="required" >
+    <input id="editfile" type="text" name="editfile" value="" readonly="" data-picktop="/boot/config/plugins/mirsht" data-pickcloseonfile="true" data-pickfilter="yaml" data-pickroot="/boot/config/plugins/mirsht" data-pickfolders="false" required="required" >
 
     <textarea id="editdata" name="editdata" placeholder="Select a configuration file to modify."></textarea>
     <input type="hidden" name="commit" value="1" />
@@ -54,9 +54,9 @@ Markdown="false"
 </form>
 
 <script src="<?=autov('/webGui/javascript/jquery.filetree.js');?>"></script>
-<script src="<?=autov('/plugins/mirrorshuttlep/js/codemirror.min.js');?>"></script>
-<script src="<?=autov('/plugins/mirrorshuttlep/js/autorefresh.min.js');?>"></script>
-<script src="<?=autov('/plugins/mirrorshuttlep/js/yaml.min.js');?>"></script>
+<script src="<?=autov('/plugins/mirsht/js/codemirror.min.js');?>"></script>
+<script src="<?=autov('/plugins/mirsht/js/autorefresh.min.js');?>"></script>
+<script src="<?=autov('/plugins/mirsht/js/yaml.min.js');?>"></script>
 
 <script>
 $(function(){
@@ -77,15 +77,15 @@ $(function(){
 
     $('#editfile').on('change', function () {
         var Editfile = $('#editfile').val();
-        $.getJSON('/plugins/mirrorshuttlep/include/mirsh_edit.php', {editfile: Editfile}, function (data) {
+        $.getJSON('/plugins/mirsht/include/mirsh_edit.php', {editfile: Editfile}, function (data) {
                 editor.setValue(data);
             }
         );
     });
 
-    $('#editfile').val("/boot/config/plugins/mirrorshuttlep/config.yaml");
+    $('#editfile').val("/boot/config/plugins/mirsht/config.yaml");
     var EditfileDefault = $('#editfile').val();
-    $.getJSON('/plugins/mirrorshuttlep/include/mirsh_edit.php', {editfile: EditfileDefault}, function (data) {
+    $.getJSON('/plugins/mirsht/include/mirsh_edit.php', {editfile: EditfileDefault}, function (data) {
             editor.setValue(data);
         }
     );
@@ -93,7 +93,7 @@ $(function(){
     // save config
     $('#btnSubmit').click(function () {
         editor.save();
-        $.post('/plugins/mirrorshuttlep/include/mirsh_save.php', $('#editform').serializeArray(), function (data) {
+        $.post('/plugins/mirsht/include/mirsh_save.php', $('#editform').serializeArray(), function (data) {
             var Title = 'Configuration ';
 
             if(data.success)

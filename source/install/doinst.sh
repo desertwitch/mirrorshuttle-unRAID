@@ -15,12 +15,12 @@
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
 #
-BOOT="/boot/config/plugins/mirrorshuttlep"
-DOCROOT="/usr/local/emhttp/plugins/mirrorshuttlep"
+BOOT="/boot/config/plugins/mirsht"
+DOCROOT="/usr/local/emhttp/plugins/mirsht"
 
 # Update file permissions of scripts
 chmod 755 $DOCROOT/event/*
 chmod 755 $DOCROOT/scripts/*
 
-cp -n $DOCROOT/default.cfg $BOOT/mirrorshuttlep.cfg
+cp -n $DOCROOT/default.cfg $BOOT/mirsht.cfg
 cp -n $DOCROOT/default.yaml $BOOT/config.yaml

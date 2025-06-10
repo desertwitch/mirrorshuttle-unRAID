@@ -17,7 +17,7 @@
  * included in all copies or substantial portions of the Software.
  *
  */
-$base = '/boot/config/plugins/mirrorshuttlep/';
+$base = '/boot/config/plugins/mirsht/';
 $file = realpath($_GET['editfile']);
 $editfile = 'Invalid File';
 

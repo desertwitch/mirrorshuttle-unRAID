@@ -22,12 +22,12 @@ Markdown="false"
  * included in all copies or substantial portions of the Software.
  *
  */
-require_once '/usr/local/emhttp/plugins/mirrorshuttlep/include/mirsh_config.php';
+require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_config.php';
 ?>
 
-<form markdown="0" id="mirrorshuttlep-settings" name="mirrorshuttlep_settings" method="POST" action="/update.php" target="progressFrame">
-    <input type="hidden" id="mirsh-file" name="#file" value="mirrorshuttlep/mirrorshuttlep.cfg">
-    <input type="hidden" id="mirsh-cmd" name="#command" value="/usr/local/emhttp/plugins/mirrorshuttlep/scripts/none">
+<form markdown="0" id="mirsht-settings" name="mirsht_settings" method="POST" action="/update.php" target="progressFrame">
+    <input type="hidden" id="mirsh-file" name="#file" value="mirsht/mirsht.cfg">
+    <input type="hidden" id="mirsh-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
     <dl>
         <dt>MirrorShuttle - Backend:</dt>
@@ -56,7 +56,7 @@ $(function() {
     });
 
     if ( typeof caPluginUpdateCheck === "function" ) {
-        caPluginUpdateCheck("mirrorshuttlep.plg",{name:"MirrorShuttle"});
+        caPluginUpdateCheck("mirsht.plg",{name:"MirrorShuttle"});
     }
 });
 </script>
