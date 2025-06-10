@@ -77,15 +77,15 @@ $(function(){
 
     $('#editfile').on('change', function () {
         var Editfile = $('#editfile').val();
-        $.getJSON('/plugins/mirrorshuttle/include/mirsh_edit.php', {editfile: Editfile}, function (data) {
+        $.getJSON('/plugins/mirrorshuttlep/include/mirsh_edit.php', {editfile: Editfile}, function (data) {
                 editor.setValue(data);
             }
         );
     });
 
-    $('#editfile').val("/boot/config/plugins/mirrorshuttle/config.yaml");
+    $('#editfile').val("/boot/config/plugins/mirrorshuttlep/config.yaml");
     var EditfileDefault = $('#editfile').val();
-    $.getJSON('/plugins/mirrorshuttle/include/mirsh_edit.php', {editfile: EditfileDefault}, function (data) {
+    $.getJSON('/plugins/mirrorshuttlep/include/mirsh_edit.php', {editfile: EditfileDefault}, function (data) {
             editor.setValue(data);
         }
     );
@@ -93,7 +93,7 @@ $(function(){
     // save config
     $('#btnSubmit').click(function () {
         editor.save();
-        $.post('/plugins/mirrorshuttle/include/mirsh_save.php', $('#editform').serializeArray(), function (data) {
+        $.post('/plugins/mirrorshuttlep/include/mirsh_save.php', $('#editform').serializeArray(), function (data) {
             var Title = 'Configuration ';
 
             if(data.success)
