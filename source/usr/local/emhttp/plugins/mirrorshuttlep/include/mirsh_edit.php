@@ -17,7 +17,7 @@
  * included in all copies or substantial portions of the Software.
  *
  */
-$base = '/etc/mergerfsp/';
+$base = '/boot/config/plugins/mirrorshuttlep/';
 $file = realpath($_GET['editfile']);
 $editfile = 'Invalid File';
 
