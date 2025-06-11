@@ -147,10 +147,9 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
         <input type="hidden" id="mirsht-ops-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
         <span style="float:right;text-align:right;">
-            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="Start Init" title="Clears the array's output screen of the current/previous array operation.">
-            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="Start Move" title="Deletes the array's SnapRAID logfiles, also including the array's output screen of the current/previous array operation.">
-            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="Stop Operation" title="Attempts to stop the array's running SnapRAID instances.">
-            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-kill" value="Kill Operation" title="Kills the array's running SnapRAID instances with SIGKILL. Beware DATA CORRUPTION can be a possible result of this action.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="START INIT" title="Clears the array's output screen of the current/previous array operation.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="START MOVE" title="Deletes the array's SnapRAID logfiles, also including the array's output screen of the current/previous array operation.">
+            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP RUNNING" title="Attempts to stop the array's running SnapRAID instances.">
             <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation before running any operations.</div>
             <br>
         </span>
@@ -542,11 +541,6 @@ $(document).ready(function() {
 
     $('#mirsht-stop').click(function(){
         $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/mirsht/scripts/stop');
-        $('#mirsht-operations').submit();
-    });
-
-    $('#mirsht-kill').click(function(){
-        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/mirsht/scripts/kill');
         $('#mirsht-operations').submit();
     });
 

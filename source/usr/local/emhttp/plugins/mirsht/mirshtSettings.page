@@ -200,6 +200,10 @@ function mirshtStatus() {
         } else {
             $('.mirsht-run').prop('disabled', false);
             $('.mirsht-notrun').prop('disabled', true);
+
+            if (MirrorShuttleGUI && MirrorShuttleGUI.isRefreshing) {
+                MirrorShuttleGUI.toggleRefresh();
+            }
         }
     },
     error: function() {

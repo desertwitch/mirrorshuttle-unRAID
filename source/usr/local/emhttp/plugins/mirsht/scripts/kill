@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "Killing..." | logger -t "mirrorshuttle-plugin"
-killall -9 mirrorshuttle
