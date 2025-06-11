@@ -131,7 +131,7 @@ $(document).ready(function() {
 
         config: {
             refreshInterval: 1000,
-            loadLimit: 1000
+            loadLimit: 5000
         },
 
         init: function() {
