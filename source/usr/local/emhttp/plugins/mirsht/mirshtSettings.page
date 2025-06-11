@@ -38,6 +38,13 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
     </dl>
 
     <dl>
+        <dt>MirrorShuttle Binaries:</dt>
+        <dd>
+            <strong><?= isset($mirsht_binaries) && $mirsht_binaries ? $mirsht_binaries : "n/a" ?></strong>
+        </dd>
+    </dl>
+
+    <dl>
         <dt><strong>Move on Schedule:</strong></dt>
         <dd>
             <select class="mirsht-run" id="CRON" name="CRON" size="1">

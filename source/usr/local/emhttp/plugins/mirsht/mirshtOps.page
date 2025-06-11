@@ -2,6 +2,7 @@ Menu="OtherSettings"
 Type="xmenu"
 Title="MirrorShuttle"
 Icon="mirsht.png"
+Tag="adjust"
 Markdown="false"
 ---
 <?
@@ -45,7 +46,7 @@ Markdown="false"
         <tr id="ms-collapsible">
             <td style="width: 300px; text-align: center; vertical-align: middle; white-space: nowrap;">
                 <div style="margin:15px;">
-                    <img src="/plugins/mirsht/assets/mirrorshuttle.png" alt="Logo" style="width: 135px;">
+                    <img src="/plugins/mirsht/assets/mirrorshuttle.png" alt="Logo" style="width: 160px;">
                     <div style="margin-top:10px;">
                     <span style="font-size:1.5rem;font-weight:bold;">MirrorShuttle</span><br>
                     Keep your organization, ditch the ransomware.
@@ -147,7 +148,7 @@ Markdown="false"
         <span style="float:right;text-align:right;">
             <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="START INIT" title="Mirrors the structure of the target directory into the mirror directory.">
             <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="START MOVE" title="Moves any new content inside the mirror directory into the target directory.">
-            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP RUNNING" title="Gracefully stops any running MirrorShuttle instances.">
+            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP PROGRAM" title="Gracefully stops any running MirrorShuttle instances.">
             <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation before running any operations.</div>
             <br>
         </span>

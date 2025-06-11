@@ -30,5 +30,6 @@ $mirsht_finishnotify = trim(isset($mirsht_cfg['FINISHNOTIFY']) ? htmlspecialchar
 $mirsht_errornotify = trim(isset($mirsht_cfg['ERRORNOTIFY']) ? htmlspecialchars($mirsht_cfg['ERRORNOTIFY']) : 'enable');
 
 $mirsht_backend = htmlspecialchars(trim(shell_exec("find /var/log/packages/ -type f -iname 'mirrorshuttle-*' -printf '%f\n' 2> /dev/null") ?? "n/a"));
+$mirsht_binaries = htmlspecialchars(trim(shell_exec("command -v mirrorshuttle 2> /dev/null") ?? "n/a"));
 $mirsht_running = !empty(shell_exec("pgrep -x mirrorshuttle 2>/dev/null"));
 ?>
