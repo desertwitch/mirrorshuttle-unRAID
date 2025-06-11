@@ -32,10 +32,10 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
 
 <style>
     .ms-collapsible-bar {
-        height: 5px;
         cursor: pointer;
-        text-align: center;
-        font-size: 10px;
+        height: 3px !important;
+        text-align: center !important;
+        font-size: 8px !important;
         color: #666;
         line-height: 1;
         padding: 0;
@@ -146,12 +146,12 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
     <form markdown="0" id="mirsht-operations" name="mirsht_operations" method="POST" action="/update.php" target="progressFrame">
         <input type="hidden" id="mirsht-ops-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
-        <span style="float:right;">
+        <span style="float:right;text-align:right;">
             <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="Start Init" title="Clears the array's output screen of the current/previous array operation.">
             <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="Start Move" title="Deletes the array's SnapRAID logfiles, also including the array's output screen of the current/previous array operation.">
             <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="Stop Operation" title="Attempts to stop the array's running SnapRAID instances.">
             <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-kill" value="Kill Operation" title="Kills the array's running SnapRAID instances with SIGKILL. Beware DATA CORRUPTION can be a possible result of this action.">
-            <div style="text-align:right;margin-right:15px;"><strong>Please always read and understand the documentation before running any operations.</strong></div>
+            <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation before running any operations.</div>
             <br>
         </span>
     </form>
