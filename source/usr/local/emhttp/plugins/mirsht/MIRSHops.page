@@ -249,7 +249,7 @@ $(document).ready(function() {
             const visibleCount = this.filteredLogs.length;
 
             if (this.totalLogCount >= 0) {
-                this.$elements.logCount.text(` (${this.totalLogCount} entries)`);
+                this.$elements.logCount.text(` (last ${this.totalLogCount} entries)`);
                 if (visibleCount !== this.totalLogCount) {
                     this.$elements.visibleCount.text(` - ${visibleCount} visible`);
                 } else {
@@ -318,8 +318,6 @@ $(document).ready(function() {
 
         // Toggle refresh state
         toggleRefresh: function() {
-            if (this.isLoading) return;
-
             this.isRefreshing = !this.isRefreshing;
 
             if (this.isRefreshing) {

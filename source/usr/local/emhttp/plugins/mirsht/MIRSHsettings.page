@@ -30,7 +30,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_config.php';
     <input type="hidden" id="mirsh-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
     <dl>
-        <dt>MirrorShuttle - Backend:</dt>
+        <dt>MirrorShuttle Backend:</dt>
         <dd>
             <strong><?= isset($mirsh_backend) && $mirsh_backend ? $mirsh_backend : "n/a" ?></strong>
         </dd>

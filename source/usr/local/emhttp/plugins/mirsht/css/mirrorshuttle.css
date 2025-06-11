@@ -251,7 +251,8 @@
     font-size: 0.8em;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 3px;
-    background: white;
+    background: #777;
+    color: white;
     transition: background-color 0.2s;
 }
 
