@@ -35,6 +35,10 @@ Markdown="false"
     .fileTree {color:#486dba;width:305px;max-height:150px;overflow:scroll;position:absolute;z-index:100;display:none;}
 </style>
 
+<div style="margin-left:10px;">
+    <strong>Please refer to the <a href="https://github.com/desertwitch/mirrorshuttle#readme" target="_blank">extensive documentation</a> for more information and <a href="/plugins/mirsht/assets/chart.png" target="_blank">example configurations</a>.</strong>
+</div><br>
+
 <form id="editform" method="POST">
     <img id="editfolder" style="cursor:pointer;margin-left: 10px;" src="/webGui/images/explore.png" >
 
