@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Kill..." | logger -t "mirrorshuttle-plugin"

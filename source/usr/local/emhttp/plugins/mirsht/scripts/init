@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Init..." | logger -t "mirrorshuttle-plugin"

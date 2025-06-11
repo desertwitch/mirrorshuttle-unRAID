@@ -27,8 +27,8 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 ?>
 
 <form markdown="0" id="mirsht-settings" name="mirsht_settings" method="POST" action="/update.php" target="progressFrame">
-    <input type="hidden" id="mirsht-file" name="#file" value="mirsht/mirsht.cfg">
-    <input type="hidden" id="mirsht-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/write_config">
+    <input type="hidden" id="mirsht-set-file" name="#file" value="mirsht/mirsht.cfg">
+    <input type="hidden" id="mirsht-set-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/write_config">
 
     <dl>
         <dt>Backend:</dt>
@@ -38,7 +38,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
     </dl>
 
     <dl>
-        <dt><strong>Scheduled Moving:</strong></dt>
+        <dt><strong>Move on Schedule:</strong></dt>
         <dd>
             <select class="mirsht-run" id="CRON" name="CRON" size="1">
                 <?=mk_option($mirsht_cron, "disable", "Never");?>
@@ -56,7 +56,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
     <div id="CRONDOWSETTING">
         <dl>
-            <dt>Scheduled Moving - Day of Week:</dt>
+            <dt>Move on Schedule - Day of Week:</dt>
             <dd>
                 <select class="mirsht-run" id="CRONDOW" name="CRONDOW" size="1">
                     <?=mk_option($mirsht_crondow, "0", "Sunday");?>
@@ -73,7 +73,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
     <div id="CRONDOMSETTING">
         <dl>
-            <dt>Scheduled Moving - Day of Month:</dt>
+            <dt>Move on Schedule - Day of Month:</dt>
             <dd>
                 <select class="mirsht-run" id="CRONDOM" name="CRONDOM" size="1">
                     <?=mirsht_dom_options($mirsht_crondom);?>
@@ -88,7 +88,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
     <div id="CRONHOURSETTING">
         <dl>
-            <dt>Scheduled Moving - Hour:</dt>
+            <dt>Move on Schedule - Hour:</dt>
             <dd>
                 <select class="mirsht-run" id="CRONHOUR" name="CRONHOUR" size="1">
                     <?=mirsht_hour_options($mirsht_cronhour);?>
@@ -103,7 +103,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
     <div id="CRONSETTINGS">
         <dl>
-            <dt>Scheduled Moving - Started Notifications:</dt>
+            <dt>Move on Schedule - Started Notifications:</dt>
             <dd>
                 <select class="mirsht-run" id="STARTNOTIFY" name="STARTNOTIFY" size="1">
                     <?=mk_option($mirsht_startnotify, "disable", "No");?>
@@ -118,7 +118,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </blockquote>
 
         <dl>
-            <dt>Scheduled Moving - Finished Notifications:</dt>
+            <dt>Move on Schedule - Finished Notifications:</dt>
             <dd>
                 <select class="mirsht-run" id="FINISHNOTIFY" name="FINISHNOTIFY" size="1">
                     <?=mk_option($mirsht_finishnotify, "disable", "No");?>
@@ -133,7 +133,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </blockquote>
 
         <dl>
-            <dt>Scheduled Moving - Failure Notifications:</dt>
+            <dt>Move on Schedule - Failure Notifications:</dt>
             <dd>
                 <select class="mirsht-run" id="ERRORNOTIFY" name="ERRORNOTIFY" size="1">
                     <?=mk_option($mirsht_errornotify, "disable", "No");?>
@@ -194,8 +194,10 @@ $(function() {
 
     if ("<?=$mirsht_running;?>" == 1){
         $('.mirsht-run').prop('disabled', true);
+        $('.mirsht-notrun').prop('disabled', false);
     } else {
         $('.mirsht-run').prop('disabled', false);
+        $('.mirsht-notrun').prop('disabled', true);
     }
 
     $("#CRON").change(mirshtCronSettings);
