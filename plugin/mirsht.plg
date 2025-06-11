@@ -36,9 +36,12 @@ run the post-installation scripts
 -->
 <FILE Run="/bin/bash">
 <INLINE>
-if [ -x /usr/local/emhttp/plugins/mirsh/scripts/write_config ]; then
-    /usr/local/emhttp/plugins/mirsh/scripts/write_config
+echo ""
+
+if [ -x /usr/local/emhttp/plugins/mirsht/scripts/write_config ]; then
+    /usr/local/emhttp/plugins/mirsht/scripts/write_config
 fi
+
 echo ""
 echo "-------------------------------------------------------------"
 echo " MirrorShuttle for UNRAID has been installed."

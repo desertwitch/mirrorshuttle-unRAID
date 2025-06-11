@@ -190,6 +190,7 @@ function mirshCronSettings() {
 }
 $(function() {
     showStatus('mirrorshuttle');
+    mirshCronSettings();
 
     if ("<?=$mirsh_running;?>" == 1){
         $('.mirshrun').prop('disabled', true);
