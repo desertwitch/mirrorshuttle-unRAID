@@ -1,4 +1,4 @@
-Menu="MIRSHops:2"
+Menu="mirshtOps:2"
 Title="MirrorShuttle Configuration"
 Tag="cog"
 Markdown="false"
@@ -59,7 +59,7 @@ Markdown="false"
 <script>
 $(function(){
     $('#btnCancel').click(function() {
-        location = '/Settings/MIRSHsettings';
+        location = '/Settings/mirshtOps';
     });
 
     var editor = CodeMirror.fromTextArea($('#editdata')[0], {
@@ -75,7 +75,7 @@ $(function(){
 
     $('#editfile').on('change', function () {
         var Editfile = $('#editfile').val();
-        $.getJSON('/plugins/mirsht/include/mirsh_edit.php', {editfile: Editfile}, function (data) {
+        $.getJSON('/plugins/mirsht/include/mirsht_edit.php', {editfile: Editfile}, function (data) {
                 editor.setValue(data);
             }
         );
@@ -83,7 +83,7 @@ $(function(){
 
     $('#editfile').val("/boot/config/plugins/mirsht/config.yaml");
     var EditfileDefault = $('#editfile').val();
-    $.getJSON('/plugins/mirsht/include/mirsh_edit.php', {editfile: EditfileDefault}, function (data) {
+    $.getJSON('/plugins/mirsht/include/mirsht_edit.php', {editfile: EditfileDefault}, function (data) {
             editor.setValue(data);
         }
     );
@@ -91,7 +91,7 @@ $(function(){
     // save config
     $('#btnSubmit').click(function () {
         editor.save();
-        $.post('/plugins/mirsht/include/mirsh_save.php', $('#editform').serializeArray(), function (data) {
+        $.post('/plugins/mirsht/include/mirsht_save.php', $('#editform').serializeArray(), function (data) {
             var Title = 'Configuration ';
 
             if(data.success)

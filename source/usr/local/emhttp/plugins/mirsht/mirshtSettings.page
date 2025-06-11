@@ -1,4 +1,4 @@
-Menu="MIRSHops:1"
+Menu="mirshtOps:1"
 Title="MirrorShuttle Settings"
 Tag="sliders"
 Markdown="false"
@@ -22,30 +22,30 @@ Markdown="false"
  * included in all copies or substantial portions of the Software.
  *
  */
-require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_config.php';
-require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
+require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_config.php';
+require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 ?>
 
 <form markdown="0" id="mirsht-settings" name="mirsht_settings" method="POST" action="/update.php" target="progressFrame">
-    <input type="hidden" id="mirsh-file" name="#file" value="mirsht/mirsht.cfg">
-    <input type="hidden" id="mirsh-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/write_config">
+    <input type="hidden" id="mirsht-file" name="#file" value="mirsht/mirsht.cfg">
+    <input type="hidden" id="mirsht-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/write_config">
 
     <dl>
         <dt>Backend:</dt>
         <dd>
-            <strong><?= isset($mirsh_backend) && $mirsh_backend ? $mirsh_backend : "n/a" ?></strong>
+            <strong><?= isset($mirsht_backend) && $mirsht_backend ? $mirsht_backend : "n/a" ?></strong>
         </dd>
     </dl>
 
     <dl>
         <dt><strong>Scheduled Moving:</strong></dt>
         <dd>
-            <select class="mirshrun" id="CRON" name="CRON" size="1">
-                <?=mk_option($mirsh_cron, "disable", "Never");?>
-                <?=mk_option($mirsh_cron, "hourly", "Hourly");?>
-                <?=mk_option($mirsh_cron, "daily", "Daily");?>
-                <?=mk_option($mirsh_cron, "weekly", "Weekly");?>
-                <?=mk_option($mirsh_cron, "monthly", "Monthly");?>
+            <select class="mirsht-run" id="CRON" name="CRON" size="1">
+                <?=mk_option($mirsht_cron, "disable", "Never");?>
+                <?=mk_option($mirsht_cron, "hourly", "Hourly");?>
+                <?=mk_option($mirsht_cron, "daily", "Daily");?>
+                <?=mk_option($mirsht_cron, "weekly", "Weekly");?>
+                <?=mk_option($mirsht_cron, "monthly", "Monthly");?>
             </select>
         </dd>
     </dl>
@@ -58,14 +58,14 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dl>
             <dt>Scheduled Moving - Day of Week:</dt>
             <dd>
-                <select class="mirshrun" id="CRONDOW" name="CRONDOW" size="1">
-                    <?=mk_option($mirsh_crondow, "0", "Sunday");?>
-                    <?=mk_option($mirsh_crondow, "1", "Monday");?>
-                    <?=mk_option($mirsh_crondow, "2", "Tuesday");?>
-                    <?=mk_option($mirsh_crondow, "3", "Wednesday");?>
-                    <?=mk_option($mirsh_crondow, "4", "Thursday");?>
-                    <?=mk_option($mirsh_crondow, "5", "Friday");?>
-                    <?=mk_option($mirsh_crondow, "6", "Saturday");?>
+                <select class="mirsht-run" id="CRONDOW" name="CRONDOW" size="1">
+                    <?=mk_option($mirsht_crondow, "0", "Sunday");?>
+                    <?=mk_option($mirsht_crondow, "1", "Monday");?>
+                    <?=mk_option($mirsht_crondow, "2", "Tuesday");?>
+                    <?=mk_option($mirsht_crondow, "3", "Wednesday");?>
+                    <?=mk_option($mirsht_crondow, "4", "Thursday");?>
+                    <?=mk_option($mirsht_crondow, "5", "Friday");?>
+                    <?=mk_option($mirsht_crondow, "6", "Saturday");?>
                 </select>
             </dd>
         </dl>
@@ -75,8 +75,8 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dl>
             <dt>Scheduled Moving - Day of Month:</dt>
             <dd>
-                <select class="mirshrun" id="CRONDOM" name="CRONDOM" size="1">
-                    <?=mirsh_dom_options($mirsh_crondom);?>
+                <select class="mirsht-run" id="CRONDOM" name="CRONDOM" size="1">
+                    <?=mirsht_dom_options($mirsht_crondom);?>
                 </select>
             </dd>
         </dl>
@@ -90,8 +90,8 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dl>
             <dt>Scheduled Moving - Hour:</dt>
             <dd>
-                <select class="mirshrun" id="CRONHOUR" name="CRONHOUR" size="1">
-                    <?=mirsh_hour_options($mirsh_cronhour);?>
+                <select class="mirsht-run" id="CRONHOUR" name="CRONHOUR" size="1">
+                    <?=mirsht_hour_options($mirsht_cronhour);?>
                 </select>
             </dd>
         </dl>
@@ -105,9 +105,9 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dl>
             <dt>Scheduled Moving - Started Notifications:</dt>
             <dd>
-                <select class="mirshrun" id="STARTNOTIFY" name="STARTNOTIFY" size="1">
-                    <?=mk_option($mirsh_startnotify, "disable", "No");?>
-                    <?=mk_option($mirsh_startnotify, "enable", "Yes");?>
+                <select class="mirsht-run" id="STARTNOTIFY" name="STARTNOTIFY" size="1">
+                    <?=mk_option($mirsht_startnotify, "disable", "No");?>
+                    <?=mk_option($mirsht_startnotify, "enable", "Yes");?>
                 </select>
             </dd>
         </dl>
@@ -120,9 +120,9 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dl>
             <dt>Scheduled Moving - Finished Notifications:</dt>
             <dd>
-                <select class="mirshrun" id="FINISHNOTIFY" name="FINISHNOTIFY" size="1">
-                    <?=mk_option($mirsh_finishnotify, "disable", "No");?>
-                    <?=mk_option($mirsh_finishnotify, "enable", "Yes");?>
+                <select class="mirsht-run" id="FINISHNOTIFY" name="FINISHNOTIFY" size="1">
+                    <?=mk_option($mirsht_finishnotify, "disable", "No");?>
+                    <?=mk_option($mirsht_finishnotify, "enable", "Yes");?>
                 </select>
             </dd>
         </dl>
@@ -135,9 +135,9 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dl>
             <dt>Scheduled Moving - Failure Notifications:</dt>
             <dd>
-                <select class="mirshrun" id="ERRORNOTIFY" name="ERRORNOTIFY" size="1">
-                    <?=mk_option($mirsh_errornotify, "disable", "No");?>
-                    <?=mk_option($mirsh_errornotify, "enable", "Yes");?>
+                <select class="mirsht-run" id="ERRORNOTIFY" name="ERRORNOTIFY" size="1">
+                    <?=mk_option($mirsht_errornotify, "disable", "No");?>
+                    <?=mk_option($mirsht_errornotify, "enable", "Yes");?>
                 </select>
             </dd>
         </dl>
@@ -154,13 +154,13 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsh_helpers.php';
         <dd>
             <input type="submit" id="btnApply" name="#apply" value="Apply">
             <input type="button" value="Done" onclick="done()">
-            <input id="DEFAULT" type="submit" class="mirshtip" name="#default" value="Default" title="Reverts the configuration to default values.">
+            <input id="DEFAULT" type="submit" class="mirsht-tip" name="#default" value="Default" title="Reverts the configuration to default values.">
         </dd>
     </dl>
 </form>
 
 <script>
-function mirshCronSettings() {
+function mirshtCronSettings() {
     if ($("#CRON").val() === "hourly") {
         $("#CRONSETTINGS").show();
         $("#CRONHOURSETTING").hide();
@@ -190,17 +190,17 @@ function mirshCronSettings() {
 }
 $(function() {
     showStatus('mirrorshuttle');
-    mirshCronSettings();
+    mirshtCronSettings();
 
-    if ("<?=$mirsh_running;?>" == 1){
-        $('.mirshrun').prop('disabled', true);
+    if ("<?=$mirsht_running;?>" == 1){
+        $('.mirsht-run').prop('disabled', true);
     } else {
-        $('.mirshrun').prop('disabled', false);
+        $('.mirsht-run').prop('disabled', false);
     }
 
-    $("#CRON").change(mirshCronSettings);
+    $("#CRON").change(mirshtCronSettings);
 
-    $('.mirshtip').tooltipster({
+    $('.mirsht-tip').tooltipster({
         maxWidth: 300
     });
 

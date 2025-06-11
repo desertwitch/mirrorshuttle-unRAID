@@ -25,7 +25,7 @@ Markdown="false"
  *
  */
 $jsonFile = '/tmp/mirrorshuttle.json';
-$loaderUrl = '/plugins/mirsht/include/mirsh_loader.php';
+$loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
 ?>
 
 <link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirsht/css/mirrorshuttle.css');?>">
