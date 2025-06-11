@@ -57,8 +57,8 @@ Markdown="false"
             <td style="width: 100%;"></td>
 
             <td style="text-align: right; vertical-align:middle; white-space: nowrap;font-size:1.5rem;">
-                <a href="#link1" style="margin: 0 15px;" target="_blank">Documentation</a><br>
-                <a href="#link2" style="margin: 0 15px;" target="_blank">GitHub Project Website</a><br>
+                <a href="https://github.com/desertwitch/mirrorshuttle#readme" style="margin: 0 15px;" target="_blank">Documentation</a><br>
+                <a href="https://pkg.go.dev/github.com/desertwitch/mirrorshuttle" style="margin: 0 15px;" target="_blank">Go Reference Website</a><br>
                 <a href="#link3" style="margin: 0 15px;" target="_blank">Support Thread (Forums)</a>
             </td>
         </tr>
@@ -149,7 +149,7 @@ Markdown="false"
             <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="START INIT" title="Mirrors the structure of the target directory into the mirror directory.">
             <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="START MOVE" title="Moves any new content inside the mirror directory into the target directory.">
             <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP PROGRAM" title="Gracefully stops any running MirrorShuttle instances.">
-            <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation before running any operations.</div>
+            <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation <strong>before</strong> running any operations.</div>
             <br>
         </span>
     </form>
