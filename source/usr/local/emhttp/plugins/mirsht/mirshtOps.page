@@ -109,7 +109,7 @@ Markdown="false"
                         <span class="ms-filter-btn" id="ms-select-none">Select None</span>
                         <? if(file_exists("/tmp/mirrorshuttle.json")): ?>
                         <span class="ms-filter-btn" id="ms-download-logs">
-                            <a href="/plugins/mirsht/include/mirsht_download.php" style="all: unset; cursor: pointer;">Download Full</a>
+                            <a href="/plugins/mirsht/include/mirsht_download.php" style="all: unset; cursor: pointer;" target="_blank">Download Full</a>
                         </span>
                         <? endif; ?>
                         <span class="ms-filter-btn" id="ms-refresh-now">Refresh Now</span>
