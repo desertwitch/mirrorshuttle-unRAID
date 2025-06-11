@@ -188,35 +188,8 @@ function mirshtCronSettings() {
         $("#CRONDOMSETTING").hide();
     }
 }
-function mirshtStatus() {
-    $.ajax({
-    url: '/plugins/mirsht/include/mirsht_status.php',
-    method: 'GET',
-    dataType: 'json',
-    success: function(response) {
-        if (response.running) {
-            $('.mirsht-run').prop('disabled', true);
-            $('.mirsht-notrun').prop('disabled', false);
-        } else {
-            $('.mirsht-run').prop('disabled', false);
-            $('.mirsht-notrun').prop('disabled', true);
-
-            if (MirrorShuttleGUI && MirrorShuttleGUI.isRefreshing) {
-                MirrorShuttleGUI.toggleRefresh();
-            }
-        }
-    },
-    error: function() {
-        $('.mirsht-run').prop('disabled', false);
-        $('.mirsht-notrun').prop('disabled', false);
-    }
-    });
-}
 $(function() {
     showStatus('mirrorshuttle');
-
-    setInterval(mirshtStatus, 3000);
-    mirshtStatus();
 
     mirshtCronSettings();
     $("#CRON").change(mirshtCronSettings);

@@ -23,8 +23,6 @@ Markdown="false"
  * included in all copies or substantial portions of the Software.
  *
  */
-$jsonFile = '/tmp/mirrorshuttle.json';
-$loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
 ?>
 
 <link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirsht/css/mirrorshuttle.css');?>">
@@ -208,6 +206,9 @@ $(document).ready(function() {
             this.updateUI();
             this.loadLogs();
             this.startAutoRefresh();
+            this.pollStatus();
+
+            this.statusInterval = setInterval(() => this.pollStatus, 3000);
 
             $(window).on('beforeunload', () => this.cleanup());
         },
@@ -418,7 +419,7 @@ $(document).ready(function() {
         buildUrl: function(action = 'load') {
             const params = new URLSearchParams();
             params.append('action', action);
-            params.append('file', '<?php echo $jsonFile; ?>');
+            params.append('file', '/tmp/mirrorshuttle.json');
             params.append('limit', this.config.loadLimit);
             params.append('t', Date.now());
 
@@ -436,7 +437,7 @@ $(document).ready(function() {
                 params.append('search', this.searchTerm);
             }
 
-            return `<?php echo $loaderUrl; ?>?${params.toString()}`;
+            return `/plugins/mirsht/include/mirsht_loader.php?${params.toString()}`;
         },
 
         // Load logs
@@ -519,9 +520,36 @@ $(document).ready(function() {
             this.updateVisibleCount();
         },
 
+        // Handle if the program is running or not
+        pollStatus: function() {
+            $.ajax({
+                url: '/plugins/mirsht/include/mirsht_status.php',
+                method: 'GET',
+                dataType: 'json',
+                success: (response) => {
+                    if (response.running) {
+                        $('.mirsht-run').prop('disabled', true);
+                        $('.mirsht-notrun').prop('disabled', false);
+                    } else {
+                        $('.mirsht-run').prop('disabled', false);
+                        $('.mirsht-notrun').prop('disabled', true);
+
+                        if (this.isRefreshing) {
+                            this.toggleRefresh();
+                        }
+                    }
+                },
+                error: () => {
+                    $('.mirsht-run').prop('disabled', false);
+                    $('.mirsht-notrun').prop('disabled', false);
+                }
+            });
+        }
+
         // Cleanup
         cleanup: function() {
             this.stopAutoRefresh();
+            if (this.statusInterval) clearInterval(this.statusInterval);
             if (this.filterTimeout) clearTimeout(this.filterTimeout);
             if (this.clusterize) {
                 this.clusterize.destroy(true);
