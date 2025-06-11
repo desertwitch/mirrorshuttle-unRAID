@@ -151,12 +151,12 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
     <dl>
         <dt>
-            <input id="RESETCONF" class="mirsht-run" type="button" value="Reset Config">
+            <input id="RESETCONF" class="mirsht-run mirsht-tip" type="button" value="Reset Config" title="Reverts the whole configuration to its default state.">
         </dt>
         <dd>
             <input type="submit" id="btnApply" name="#apply" value="Apply">
             <input type="button" value="Done" onclick="done()">
-            <input id="DEFAULT" type="submit" class="mirsht-tip" name="#default" value="Default" title="Reverts the configuration to default values.">
+            <input id="DEFAULT" type="submit" class="mirsht-tip" name="#default" value="Default" title="Reverts the displayed settings to their default values.">
         </dd>
     </dl>
 </form>
