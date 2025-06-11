@@ -1,8 +1,7 @@
 Menu="OtherSettings"
 Type="xmenu"
 Title="MirrorShuttle"
-Icon="adjust"
-Tag="adjust"
+Icon="mirsht.png"
 Markdown="false"
 ---
 <?
