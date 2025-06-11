@@ -1,13 +1,32 @@
+# Path to the mirror (staging) structure; being created and moved *from*.
 mirror: /mnt/user/incoming/mirror
+
+# Path to the target (archival) structure; being mirrored and moved *to*.
 target: /mnt/user
+
+# Paths to be excluded; both for mirroring and moving operations.
 exclude:
   - /mnt/user/appdata
   - /mnt/user/domains
   - /mnt/user/isos
   - /mnt/user/system
+
+# Disable direct atomic renames; use copy+remove instead (safer across filesystems).
+# Understand that enabling this setting may circumvent Unraid's allocation settings,
+# meaning that your files will always stay on the disk they were on (before the move).
 direct: false
+
+# Validate all files after moving; fully re-read each file and compare content hashes.
 verify: true
+
+# If false, exit on any failure; if true, skip non-fatal errors and continue.
 skip-failed: false
+
+# Throttle directory creation in init mode; brief pauses reduce filesystem stress.
 slow-mode: true
+
+# Preview mode; does not make any actual changes to the filesystem.
 dry-run: false
+
+# Logging verbosity; options: debug, info, warn, error.
 log-level: info
