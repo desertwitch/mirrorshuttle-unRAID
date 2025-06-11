@@ -145,9 +145,9 @@ Markdown="false"
         <input type="hidden" id="mirsht-ops-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
         <span style="float:right;text-align:right;">
-            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="START INIT" title="Clears the array's output screen of the current/previous array operation.">
-            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="START MOVE" title="Deletes the array's SnapRAID logfiles, also including the array's output screen of the current/previous array operation.">
-            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP RUNNING" title="Attempts to stop the array's running SnapRAID instances.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="START INIT" title="Mirrors the structure of the target directory into the mirror directory.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="START MOVE" title="Moves any new content inside the mirror directory into the target directory.">
+            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP RUNNING" title="Gracefully stops any running MirrorShuttle instances.">
             <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation before running any operations.</div>
             <br>
         </span>
