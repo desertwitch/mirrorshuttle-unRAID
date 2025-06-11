@@ -1,0 +1,11 @@
+#!/bin/bash
+BOOT="/boot/config/plugins/mirsht"
+DOCROOT="/usr/local/emhttp/plugins/mirsht"
+
+echo "Resetting MirrorShuttle configuration..."
+echo "Resetting MirrorShuttle configuration..." | logger -t "mirrorshuttle-plugin"
+
+cp -f $DOCROOT/defaults/default.cfg $BOOT/mirsht.cfg
+cp -f $DOCROOT/defaults/default.yaml $BOOT/config.yaml
+
+echo "MirrorShuttle is now reset to defaults, reboot or reinstall plugin in case of any problems."

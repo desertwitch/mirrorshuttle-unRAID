@@ -150,7 +150,9 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
     </div>
 
     <dl>
-        <dt></dt>
+        <dt>
+            <input id="RESETCONF" class="mirsht-run" type="button" value="Reset Config">
+        </dt>
         <dd>
             <input type="submit" id="btnApply" name="#apply" value="Apply">
             <input type="button" value="Done" onclick="done()">
@@ -188,11 +190,17 @@ function mirshtCronSettings() {
         $("#CRONDOMSETTING").hide();
     }
 }
+function mirshtResetConfig() {
+    $('#mirsht-set-cmd').val('');
+    openBox('/plugins/mirsht/scripts/resetconf', 'MirrorShuttle Configuration Reset', 600, 600, true);
+}
 $(function() {
     showStatus('mirrorshuttle');
 
     mirshtCronSettings();
+
     $("#CRON").change(mirshtCronSettings);
+    $('#RESETCONF').click(function(){ swal({title:"Are you sure?",text:"This action will return any existing configuration to their defaults!",type:"warning",html:true,showCancelButton:true}, mirshtResetConfig); });
 
     $('.mirsht-tip').tooltipster({
         maxWidth: 300

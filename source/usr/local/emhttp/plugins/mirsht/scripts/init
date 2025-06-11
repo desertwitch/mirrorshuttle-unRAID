@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Starting INIT..." | logger -t "mirrorshuttle-plugin"
+echo "Starting MirrorShuttle (Init Mode)..." | logger -t "mirrorshuttle-plugin"
 nohup /usr/bin/mirrorshuttle --mode=init --config=/boot/config/plugins/mirsht/config.yaml --json 1>/dev/null 2>/tmp/mirrorshuttle.json &
 sleep 1

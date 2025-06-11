@@ -208,7 +208,7 @@ $(document).ready(function() {
             this.startAutoRefresh();
             this.pollStatus();
 
-            this.statusInterval = setInterval(() => this.pollStatus, 3000);
+            this.statusInterval = setInterval(() => this.pollStatus(), 3000);
 
             $(window).on('beforeunload', () => this.cleanup());
         },
@@ -544,7 +544,7 @@ $(document).ready(function() {
                     $('.mirsht-notrun').prop('disabled', false);
                 }
             });
-        }
+        },
 
         // Cleanup
         cleanup: function() {
