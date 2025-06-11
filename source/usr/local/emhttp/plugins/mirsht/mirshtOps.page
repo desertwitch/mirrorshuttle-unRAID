@@ -106,16 +106,20 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
     </tbody>
 </table>
 
-<form markdown="0" id="mirsht-operations" name="mirsht_operations" method="POST" action="/update.php" target="progressFrame">
-    <input type="hidden" id="mirsht-ops-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
+<div style="margin-right:15px;">
+    <form markdown="0" id="mirsht-operations" name="mirsht_operations" method="POST" action="/update.php" target="progressFrame">
+        <input type="hidden" id="mirsht-ops-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
-    <span style="float:right;">
-        <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="INIT" title="Clears the array's output screen of the current/previous array operation.">
-        <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="MOVE" title="Deletes the array's SnapRAID logfiles, also including the array's output screen of the current/previous array operation.">
-        <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP" title="Attempts to stop the array's running SnapRAID instances.">
-        <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-kill" value="KILL" title="Kills the array's running SnapRAID instances with SIGKILL. Beware DATA CORRUPTION can be a possible result of this action.">
-    </span>
-</form>
+        <span style="float:right;">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="Start Init" title="Clears the array's output screen of the current/previous array operation.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="Start Move" title="Deletes the array's SnapRAID logfiles, also including the array's output screen of the current/previous array operation.">
+            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="Stop Operation" title="Attempts to stop the array's running SnapRAID instances.">
+            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-kill" value="Kill Operation" title="Kills the array's running SnapRAID instances with SIGKILL. Beware DATA CORRUPTION can be a possible result of this action.">
+            <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation before running any operations.</div>
+            <br>
+        </span>
+    </form>
+</div>
 
 <script>
 $(document).ready(function() {
@@ -474,22 +478,22 @@ $(document).ready(function() {
     };
 
     $('#mirsht-init').click(function(){
-        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/dwsnap/scripts/init');
+        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/mirsht/scripts/init');
         $('#mirsht-operations').submit();
     });
 
     $('#mirsht-move').click(function(){
-        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/dwsnap/scripts/move');
+        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/mirsht/scripts/move');
         $('#mirsht-operations').submit();
     });
 
     $('#mirsht-stop').click(function(){
-        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/dwsnap/scripts/stop');
+        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/mirsht/scripts/stop');
         $('#mirsht-operations').submit();
     });
 
     $('#mirsht-kill').click(function(){
-        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/dwsnap/scripts/kill');
+        $('#mirsht-ops-cmd').val('/usr/local/emhttp/plugins/mirsht/scripts/kill');
         $('#mirsht-operations').submit();
     });
 

@@ -190,7 +190,9 @@ function mirshtCronSettings() {
 }
 $(function() {
     showStatus('mirrorshuttle');
+
     mirshtCronSettings();
+    $("#CRON").change(mirshtCronSettings);
 
     if ("<?=$mirsht_running;?>" == 1){
         $('.mirsht-run').prop('disabled', true);
@@ -199,8 +201,6 @@ $(function() {
         $('.mirsht-run').prop('disabled', false);
         $('.mirsht-notrun').prop('disabled', true);
     }
-
-    $("#CRON").change(mirshtCronSettings);
 
     $('.mirsht-tip').tooltipster({
         maxWidth: 300
