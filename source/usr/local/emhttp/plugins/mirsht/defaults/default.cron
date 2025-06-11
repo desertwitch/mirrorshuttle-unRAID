@@ -1,0 +1,2 @@
+# MirrorShuttle:
+* * * * * /usr/bin/mirrorshuttle-cron > /dev/null 2>&1

@@ -1,0 +1,13 @@
+mirror: /mnt/user/incoming/mirror
+target: /mnt/user
+exclude:
+  - /mnt/user/appdata
+  - /mnt/user/domains
+  - /mnt/user/isos
+  - /mnt/user/system
+direct: false
+verify: true
+skip-failed: false
+slow-mode: true
+dry-run: false
+log-level: info
