@@ -5,6 +5,12 @@ DOCROOT="/usr/local/emhttp/plugins/mirsht"
 echo "Resetting MirrorShuttle configuration..."
 echo "Resetting MirrorShuttle configuration..." | logger -t "mirrorshuttle-plugin"
 
+rm -f "/boot/config/plugins/dynamix/mirrorshuttle.cron"
+
+sleep 1
+update_cron
+sleep 1
+
 cp -f $DOCROOT/defaults/default.cfg $BOOT/mirsht.cfg
 cp -f $DOCROOT/defaults/default.yaml $BOOT/config.yaml
 
