@@ -1,6 +1,6 @@
 Menu="mirshtOps:2"
 Title="MirrorShuttle Configuration"
-Tag="pencil"
+Tag="code"
 Markdown="false"
 ---
 <?
@@ -68,6 +68,8 @@ $(function(){
         lineNumbers: true,
         autoRefresh: true
     });
+
+    editor.setSize(null, 550);
 
     $('#editfile').fileTreeAttach(null, null, function(file) {
         $('#editfile').val(file);

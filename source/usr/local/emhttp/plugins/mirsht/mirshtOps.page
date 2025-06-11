@@ -57,9 +57,9 @@ Markdown="false"
             <td style="width: 100%;"></td>
 
             <td style="text-align: right; vertical-align:middle; white-space: nowrap;font-size:1.5rem;">
-                <a href="#link1" style="margin: 0 10px;">Documentation</a><br>
-                <a href="#link2" style="margin: 0 10px;">GitHub Project Website</a><br>
-                <a href="#link3" style="margin: 0 10px;">Support Thread (Forums)</a>
+                <a href="#link1" style="margin: 0 15px;" target="_blank">Documentation</a><br>
+                <a href="#link2" style="margin: 0 15px;" target="_blank">GitHub Project Website</a><br>
+                <a href="#link3" style="margin: 0 15px;" target="_blank">Support Thread (Forums)</a>
             </td>
         </tr>
         <tr>
