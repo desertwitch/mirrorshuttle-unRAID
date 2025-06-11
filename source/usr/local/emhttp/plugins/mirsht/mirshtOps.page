@@ -30,10 +30,46 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
 <link type="text/css" rel="stylesheet" href="<?=autov('/plugins/mirsht/css/mirrorshuttle.css');?>">
 <script src="<?=autov('/plugins/mirsht/js/clusterize.min.js');?>"></script>
 
+<style>
+    .ms-collapsible-bar {
+        height: 5px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 10px;
+        color: #666;
+        line-height: 1;
+        padding: 0;
+    }
+</style>
+
 <table class="tablesorter shift" autofocus>
     <tbody>
+        <tr id="ms-collapsible">
+            <td style="width: 300px; text-align: center; vertical-align: middle; white-space: nowrap;">
+                <div style="margin:15px;">
+                    <img src="/plugins/mirsht/assets/mirrorshuttle.png" alt="Logo" style="width: 130px;">
+                    <div style="margin-top:10px;">
+                    <span style="font-size:1.5rem;font-weight:bold;">MirrorShuttle</span><br>
+                    Keep your organization, ditch the ransomware.
+                    </div>
+                </div>
+            </td>
+
+            <td style="width: 100%;"></td>
+
+            <td style="text-align: right; vertical-align:middle; white-space: nowrap;font-size:1.5rem;">
+                <a href="#link1" style="margin: 0 10px;">Documentation</a><br>
+                <a href="#link2" style="margin: 0 10px;">GitHub Project Website</a><br>
+                <a href="#link3" style="margin: 0 10px;">Support Thread (Forums)</a>
+            </td>
+        </tr>
         <tr>
-            <td>
+            <td colspan="3" class="ms-collapsible-bar" id="ms-collapsible-toggle" onClick="mirshtToggleCollapsible()">
+                &#9650;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
                 <div class="ms-filter-container">
                     <div class="ms-filter-group">
                         <span class="ms-filter-label">Filter Levels:</span>
@@ -122,6 +158,14 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
 </div>
 
 <script>
+function mirshtToggleCollapsible() {
+  const $collapsible = $('#ms-collapsible');
+  const $toggle = $('#ms-collapsible-toggle');
+
+  $collapsible.toggle();
+  $toggle.html(!$collapsible.is(":visible") ? '&#9660;' : '&#9650;');
+}
+
 $(document).ready(function() {
     const MirrorShuttleGUI = {
         allLogs: [],
