@@ -18,6 +18,6 @@
  *
  */
 
-$mirsh_backend = htmlspecialchars(trim(shell_exec("find /var/log/packages/ -type f -iname 'mirrorshuttle-*' -printf '%f\n' 2> /dev/null")));
+$mirsh_backend = htmlspecialchars(trim(shell_exec("find /var/log/packages/ -type f -iname 'mirrorshuttle-*' -printf '%f\n' 2> /dev/null") ?? "n/a"));
 
 ?>

@@ -129,7 +129,6 @@ try {
             }
         }
 
-        // Decide what to show
         if (!$validJsonFound) {
             // No parseable JSON at all
             $raw = file_get_contents($logFile);
