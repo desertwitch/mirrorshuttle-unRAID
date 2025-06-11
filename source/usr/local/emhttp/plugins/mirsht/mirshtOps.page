@@ -64,7 +64,7 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
             </td>
         </tr>
         <tr>
-            <td colspan="3" class="ms-collapsible-bar" id="ms-collapsible-toggle" onClick="mirshtToggleCollapsible()">
+            <td colspan="3" class="ms-collapsible-bar" id="ms-collapsible-toggle" onClick="mirshtToggleCollapsible(true)">
                 &#9650;
             </td>
         </tr>
@@ -158,13 +158,22 @@ $loaderUrl = '/plugins/mirsht/include/mirsht_loader.php';
 </div>
 
 <script>
-function mirshtToggleCollapsible() {
+function mirshtToggleCollapsible(toggle) {
   const $collapsible = $('#ms-collapsible');
   const $toggle = $('#ms-collapsible-toggle');
 
-  $collapsible.toggle();
-  $toggle.html(!$collapsible.is(":visible") ? '&#9660;' : '&#9650;');
+  if (toggle) {
+    const isVisible = $collapsible.is(':visible');
+    $collapsible.toggle();
+    $toggle.html(!isVisible ? '&#9650;' : '&#9660;');
+    $.cookie('mirshtCollapsed', !isVisible ? 'false' : 'true', { expires: 1, path: '/' });
+  } else {
+    const collapsed = $.cookie('mirshtCollapsed') === 'true';
+    $collapsible.toggle(!collapsed);
+    $toggle.html(!collapsed ? '&#9650;' : '&#9660;');
+  }
 }
+
 
 $(document).ready(function() {
     const MirrorShuttleGUI = {
@@ -542,5 +551,6 @@ $(document).ready(function() {
     });
 
     MirrorShuttleGUI.init();
+    mirshtToggleCollapsible(false);
 });
 </script>
