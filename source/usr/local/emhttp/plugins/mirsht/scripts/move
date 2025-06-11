@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "Starting MOVE..." | logger -t "mirrorshuttle-plugin"
-nohup /usr/bin/mirrorshuttle --mode=move --config=/boot/config/plugins/mirsht/config.yaml 1>/dev/null 2>/tmp/mirrorshuttle.json &
+nohup /usr/bin/mirrorshuttle --mode=move --config=/boot/config/plugins/mirsht/config.yaml --json 1>/dev/null 2>/tmp/mirrorshuttle.json &
 sleep 1
