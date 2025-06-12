@@ -31,14 +31,14 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
     <input type="hidden" id="mirsht-set-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/write_config">
 
     <dl>
-        <dt>MirrorShuttle Package:</dt>
+        <dt>MirrorShuttle Backend:</dt>
         <dd>
             <strong><?= isset($mirsht_backend) && $mirsht_backend ? $mirsht_backend : "n/a" ?></strong>
         </dd>
     </dl>
 
     <dl>
-        <dt>MirrorShuttle Binaries:</dt>
+        <dt>MirrorShuttle Executable:</dt>
         <dd>
             <strong><?= isset($mirsht_binaries) && $mirsht_binaries ? $mirsht_binaries : "n/a" ?></strong>
         </dd>
