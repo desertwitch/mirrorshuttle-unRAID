@@ -153,7 +153,7 @@ try {
             $logs[] = generateRawFileRow($raw);
             $logCount = 1;
         } else {
-            // Parseable JSON found — whether or not it matched filter
+            // Parseable JSON found - whether or not it matched filter
             $logCount = $hasFilteredMatches ? count($logs) : 0;
         }
 

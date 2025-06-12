@@ -40,5 +40,4 @@ function mirsht_dom_options($time){
         }
     return $mirsht_options;
 }
-
 ?>
