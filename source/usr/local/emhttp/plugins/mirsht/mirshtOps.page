@@ -151,9 +151,9 @@ Markdown="false"
         <input type="hidden" id="mirsht-ops-cmd" name="#command" value="/usr/local/emhttp/plugins/mirsht/scripts/none">
 
         <span style="float:right;text-align:right;">
-            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="START INIT" title="Mirrors the structure of the target directory into the mirror directory.">
-            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="START MOVE" title="Moves any new content inside the mirror directory into the target directory.">
-            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP PROGRAM" title="Gracefully stops any running MirrorShuttle instances.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-init" value="MANUAL INIT" title="Mirrors the structure of the configured target directory into the configured mirror directory.">
+            <input class="mirsht-run mirsht-tip" type="button" id="mirsht-move" value="MANUAL MOVE" title="Moves any new content inside the configured mirror directory into the configured target directory.">
+            <input class="mirsht-notrun mirsht-tip" type="button" id="mirsht-stop" value="STOP PROGRAM" title="Stops any running MirrorShuttle instances, this is generally safe to use without data loss or corruption.">
             <div style="text-align:right;margin-right:15px;">Please always read and understand the documentation <strong>before</strong> running any operations.</div>
             <br>
         </span>
