@@ -85,21 +85,29 @@
 }
 
 .ms-detail-item {
-    display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
+    display: inline-flex;
+    align-items: baseline;
+    min-width: 0;
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin-bottom: 2px;
 }
 
 .ms-detail-key {
+    opacity: 0.8;
     font-weight: bold;
     margin-right: 6px;
-    opacity: 0.8;
     white-space: nowrap;
 }
 
 .ms-detail-value {
-    word-break: break-all;
     opacity: 0.9;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .ms-loading-state {
