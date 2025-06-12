@@ -111,7 +111,7 @@ RET=$?
 
 DIRS_TOTAL=$(grep -c '"msg":"directory created"' /tmp/mirrorshuttle.json 2>/dev/null)
 DIRS_MIRRORED=$((DIRS_TOTAL - DIRS_CREATED))
-[ "$DIRS_MIRRORED" -lt 0 ] && DIRS_MIRRORED=0
+[ "$DIRS_MIRRORED" -lt 0 ] && DIRS_MIRRORED="?"
 
 case "$RET" in
   0)
