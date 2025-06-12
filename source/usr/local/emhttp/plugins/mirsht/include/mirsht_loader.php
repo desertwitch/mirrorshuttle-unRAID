@@ -99,7 +99,7 @@ function generateRawFileRow($rawContent) {
         <td class="ms-log-cell ms-timestamp">' . formatTime(time()) . '</td>
         <td class="ms-log-cell"><span class="ms-level ms-level-error">ERROR</span></td>
         <td class="ms-log-cell">
-            <div class="ms-message">Unable to parse file as JSON.</div>
+            <div class="ms-message">Unable to parse response as JSON.</div>
             <div class="ms-details"><pre style="white-space: pre-wrap; font-family: monospace;">' . $safe . '</pre></div>
         </td>
     </tr>';
