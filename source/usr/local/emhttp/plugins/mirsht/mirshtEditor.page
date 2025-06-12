@@ -36,7 +36,7 @@ Markdown="false"
 </style>
 
 <div style="margin-left:10px;">
-    <strong>Please refer to the <a href="https://github.com/desertwitch/mirrorshuttle#readme" target="_blank">extensive documentation</a> for more information and <a href="/plugins/mirsht/assets/chart.png" target="_blank">example configurations</a>.</strong>
+    <strong>Please refer to the <a href="https://github.com/desertwitch/mirrorshuttle#readme" target="_blank">extensive documentation</a> for more information and <a href="/plugins/mirsht/images/chart.png" target="_blank">example configurations</a>.</strong>
 </div><br>
 
 <form id="editform" method="POST">
