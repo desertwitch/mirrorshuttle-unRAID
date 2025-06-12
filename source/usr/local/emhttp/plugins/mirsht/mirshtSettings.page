@@ -120,7 +120,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>When enabled, scheduled moving will not run when the OS mover is running.</p>
+        <p>When disabled, scheduled moving will not run when the OS mover is running.</p>
         </blockquote>
 
         <dl>
@@ -134,7 +134,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>When enabled, scheduled moving will not run when a parity operation is running.</p>
+        <p>When disabled, scheduled moving will not run when a parity operation is running.</p>
         </blockquote>
 
         <dl>
