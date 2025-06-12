@@ -110,6 +110,51 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
     <div id="CRONSETTINGS">
         <dl>
+            <dt>Move on Schedule - Start when Mover Running:</dt>
+            <dd>
+                <select class="mirsht-run" id="MOVERSTART" name="MOVERSTART" size="1">
+                    <?=mk_option($mirsht_moverstart, "disable", "No");?>
+                    <?=mk_option($mirsht_moverstart, "enable", "Yes");?>
+                </select>
+            </dd>
+        </dl>
+
+        <blockquote class="inline_help">
+        <p>When enabled, scheduled moving will not run when the OS mover is running.</p>
+        </blockquote>
+
+        <dl>
+            <dt>Move on Schedule - Start when Parity Running:</dt>
+            <dd>
+                <select class="mirsht-run" id="PARITYSTART" name="PARITYSTART" size="1">
+                    <?=mk_option($mirsht_paritystart, "disable", "No");?>
+                    <?=mk_option($mirsht_paritystart, "enable", "Yes");?>
+                </select>
+            </dd>
+        </dl>
+
+        <blockquote class="inline_help">
+        <p>When enabled, scheduled moving will not run when a parity operation is running.</p>
+        </blockquote>
+
+        <dl>
+            <dt>Move on Schedule - Re-Init after Move:</dt>
+            <dd>
+                <select class="mirsht-run" id="INITAFTER" name="INITAFTER" size="1">
+                    <?=mk_option($mirsht_initafter, "disable", "No");?>
+                    <?=mk_option($mirsht_initafter, "enable", "Yes");?>
+                </select>
+            </dd>
+        </dl>
+
+        <blockquote class="inline_help">
+        <p>When enabled, scheduled moving will run a "init" operation after a successful "move" operation.</p>
+        <p>Normally this is not needed, unless you change the target directory between MirrorShuttle move operations.</p>
+        <p>The "init" operation ensures that the mirror directory structure is in sync with the target directory structure.</p>
+        <p>Note that the "init" operation only runs with success when the mirror directory does not contain unmoved files anymore.</p>
+        </blockquote>
+
+        <dl>
             <dt>Move on Schedule - Started Notifications:</dt>
             <dd>
                 <select class="mirsht-run" id="STARTNOTIFY" name="STARTNOTIFY" size="1">

@@ -17,7 +17,6 @@
 #
 
 DOCROOT="/usr/local/emhttp/plugins/mirsht"
-
 source "/boot/config/plugins/mirsht/mirsht.cfg"
 
 echo "Writing MirrorShuttle configuration..."

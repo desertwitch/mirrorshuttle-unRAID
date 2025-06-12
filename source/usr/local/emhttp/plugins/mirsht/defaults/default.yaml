@@ -4,25 +4,28 @@ mirror: /mnt/user/incoming/mirror
 # Path to the target (archival) structure; being mirrored and moved *to*.
 target: /mnt/user
 
-# Paths to be excluded; both for mirroring and moving operations.
+# Paths to always be excluded; both for mirroring and moving operations.
 exclude:
   - /mnt/user/appdata
   - /mnt/user/domains
   - /mnt/user/isos
   - /mnt/user/system
 
-# Direct atomic renames; if false, uses copy+remove instead (safer across filesystems).
-# Understand that enabling this setting circumvents Unraid's own allocation mechanisms,
-# meaning that your files will possibly stay on the disk they were on (before the move).
+# Attempt atomic rename syscalls; if false, uses copy+remove instead (which is
+# safer across filesystems). Understand that enabling this setting circumvents
+# Unraid's allocation mechanisms, meaning that files will possibly stay on the
+# disk they were on (before the move). Recommended to keep disabled on Unraid.
 direct: false
 
-# Validate files after moving; fully re-reads each file and compares hashes (BLAKE3).
+# Validate files after moving; fully re-reads each file and compares hashes
+# (BLAKE3). If false, integrity is only verified in-memory without re-reads.
 verify: true
 
 # If false, exit on first failure; if true, skip non-fatal errors and continue.
 skip-failed: false
 
-# Throttle directory creation in init mode; brief pauses reduce filesystem stress.
+# Throttle mass directory creation in init mode; brief pauses reduce filesystem
+# stress. Recommended to keep enabled on Unraid (using a union filesystem).
 slow-mode: true
 
 # Preview mode; does not make any actual changes to the filesystem.

@@ -17,13 +17,16 @@
  * included in all copies or substantial portions of the Software.
  *
  */
-
 $mirsht_cfg = file_exists("/boot/config/plugins/mirsht/mirsht.cfg") ? parse_ini_file("/boot/config/plugins/mirsht/mirsht.cfg") : [];
 
 $mirsht_cron = trim(isset($mirsht_cfg['CRON']) ? htmlspecialchars($mirsht_cfg['CRON']) : 'disable');
 $mirsht_cronhour = trim(isset($mirsht_cfg['CRONHOUR']) ? htmlspecialchars($mirsht_cfg['CRONHOUR']) : '1');
 $mirsht_crondow = trim(isset($mirsht_cfg['CRONDOW']) ? htmlspecialchars($mirsht_cfg['CRONDOW']) : '0');
 $mirsht_crondom = trim(isset($mirsht_cfg['CRONDOM']) ? htmlspecialchars($mirsht_cfg['CRONDOM']) : '1');
+
+$mirsht_moverstart = trim(isset($mirsht_cfg['MOVERSTART']) ? htmlspecialchars($mirsht_cfg['MOVERSTART']) : 'disable');
+$mirsht_paritystart = trim(isset($mirsht_cfg['PARITYSTART']) ? htmlspecialchars($mirsht_cfg['PARITYSTART']) : 'disable');
+$mirsht_initafter = trim(isset($mirsht_cfg['INITAFTER']) ? htmlspecialchars($mirsht_cfg['INITAFTER']) : 'disable');
 
 $mirsht_startnotify = trim(isset($mirsht_cfg['STARTNOTIFY']) ? htmlspecialchars($mirsht_cfg['STARTNOTIFY']) : 'disable');
 $mirsht_finishnotify = trim(isset($mirsht_cfg['FINISHNOTIFY']) ? htmlspecialchars($mirsht_cfg['FINISHNOTIFY']) : 'enable');
