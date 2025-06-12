@@ -541,7 +541,11 @@ $(document).ready(function() {
                         $('.mirsht-notrun').prop('disabled', true);
 
                         if (this.isRefreshing) {
-                            this.toggleRefresh();
+                            setTimeout(() => {
+                                if (this.isRefreshing) {
+                                    this.toggleRefresh();
+                                }
+                            }, 2000);
                         }
                     }
                 },
