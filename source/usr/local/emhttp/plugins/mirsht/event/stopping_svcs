@@ -15,4 +15,8 @@
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
 #
-killall mirrorshuttle
+if pgrep -x mirrorshuttle &>/dev/null; then
+    echo "Shutting down running MirrorShuttle instances..." | logger -t "mirrorshuttle-plugin"
+fi
+killall mirrorshuttle &>/dev/null
+exit 0
