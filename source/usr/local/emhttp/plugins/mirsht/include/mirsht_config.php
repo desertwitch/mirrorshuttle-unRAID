@@ -29,7 +29,7 @@ $mirsht_paritystart = trim(isset($mirsht_cfg['PARITYSTART']) ? htmlspecialchars(
 $mirsht_initafter = trim(isset($mirsht_cfg['INITAFTER']) ? htmlspecialchars($mirsht_cfg['INITAFTER']) : 'disable');
 
 $mirsht_startnotify = trim(isset($mirsht_cfg['STARTNOTIFY']) ? htmlspecialchars($mirsht_cfg['STARTNOTIFY']) : 'disable');
-$mirsht_finishnotify = trim(isset($mirsht_cfg['FINISHNOTIFY']) ? htmlspecialchars($mirsht_cfg['FINISHNOTIFY']) : 'enable');
+$mirsht_finishnotify = trim(isset($mirsht_cfg['FINISHNOTIFY']) ? htmlspecialchars($mirsht_cfg['FINISHNOTIFY']) : 'disable');
 $mirsht_errornotify = trim(isset($mirsht_cfg['ERRORNOTIFY']) ? htmlspecialchars($mirsht_cfg['ERRORNOTIFY']) : 'enable');
 
 $mirsht_backend = htmlspecialchars(trim(shell_exec("find /var/log/packages/ -type f -iname 'mirrorshuttle-*' -printf '%f\n' 2> /dev/null") ?? "n/a"));
