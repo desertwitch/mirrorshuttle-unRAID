@@ -23,9 +23,11 @@
 - release note: please report any problems in the support topic.
 </CHANGES>
 
-<!--
-install or upgrade the plugin itself
--->
+<FILE Name="&plgPATH;/mirrorshuttle-0.1.4-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/mirrorshuttle-0.1.4-x86_64-1.txz</URL>
+<MD5>2262fe94ebe3a011813790136b927489</MD5>
+</FILE>
+
 <FILE Name="&plgPATH;/&plgNAME;.txz" Min="6.10" Run="upgradepkg --install-new">
 <URL>&gitURL;/archive/&plgNAME;.txz</URL>
 <MD5>&plgMD5;</MD5>
