@@ -49,7 +49,7 @@ Markdown="false"
     <dl>
         <dt></dt>
         <dd>
-            <input type="button" value="Save" id="btnSubmit" title="Save the configuration changes." />
+            <input type="button" value="Save" id="btnSubmit" class="mirsht-tip" title="Save the configuration changes." />
             <input type="button" value="Cancel" id="btnCancel" />
         </dd>
     </dl>
