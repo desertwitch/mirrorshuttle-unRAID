@@ -72,7 +72,7 @@ DIRS_CREATED=$(grep -c '"msg":"directory created"' /tmp/mirrorshuttle.json 2>/de
 
 case "$RET" in
   0)
-    echo "move: finished (return code: $RET - success)" | logger -s -t "mirrorshuttle-cron"
+    echo "move: finished (return code: $RET - success) (created $DIRS_CREATED dirs, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
 
     # If re-init was also requested, notify of overall success later (so only once).
     if [ "$FINISHNOTIFY" == "enable" ] && [ "$INITAFTER" != "enable" ]; then
