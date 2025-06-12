@@ -4,4 +4,4 @@
 
 **Installation:** https://raw.githubusercontent.com/desertwitch/mirrorshuttle-unRAID/main/plugin/mirsht.plg
 
-**MirrorShuttle Project**: https://github.com/desertwitch/mirrorshuttle
+**MirrorShuttle Documentation**: https://github.com/desertwitch/mirrorshuttle
