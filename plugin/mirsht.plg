@@ -66,8 +66,8 @@ rm -rf &plgPATH;
 rm -rf &emhttp;
 
 rm -f /tmp/mirrorshuttle.json
-
 rm -f /boot/config/plugins/dynamix/mirrorshuttle.cron
+
 sleep 1
 update_cron
 sleep 1
