@@ -18,6 +18,6 @@
  *
  */
 header('Content-Type: application/json');
-$status = shell_exec("pgrep -x mirrorshuttle");
+$status = shell_exec("pgrep -x mirrorshuttle 2>/dev/null");
 echo json_encode(['running' => !empty($status)]);
 ?>

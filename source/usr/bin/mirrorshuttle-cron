@@ -20,6 +20,11 @@ HOST=$(echo "$HOSTNAME" | awk '{print toupper($0)}')
 EVENT="MirrorShuttle"
 SUBJECT="[${HOST}] MirrorShuttle:"
 
+if pgrep -x mirrorshuttle &>/dev/null; then
+    echo "mirrorshuttle is already running; exiting" | logger -s -t "mirrorshuttle-cron"
+    exit 0
+fi
+
 if [ ! -r "/boot/config/plugins/mirsht/mirsht.cfg" ]; then
     echo "configuration file cannot be read; exiting" | logger -s -t "mirrorshuttle-cron"
     exit 0
