@@ -59,7 +59,7 @@ Markdown="false"
             <td style="text-align: right; vertical-align:middle; white-space: nowrap;font-size:1.5rem;">
                 <a href="https://github.com/desertwitch/mirrorshuttle#readme" style="margin: 0 15px;" target="_blank">Documentation</a><br>
                 <a href="https://pkg.go.dev/github.com/desertwitch/mirrorshuttle" style="margin: 0 15px;" target="_blank">Go Reference Website</a><br>
-                <a href="#" style="margin: 0 15px;" target="_blank">Support Thread (Forums)</a>
+                <a href="https://forums.unraid.net/topic/191119-plugin-mirrorshuttle-for-unraid/" style="margin: 0 15px;" target="_blank">Support Thread (Forums)</a>
             </td>
         </tr>
         <tr>
