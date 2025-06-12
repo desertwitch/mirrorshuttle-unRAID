@@ -37,13 +37,13 @@ if [[ "$CRON" != "hourly" && "$CRON" != "daily" && "$CRON" != "weekly" && "$CRON
     exit 0
 fi
 
-if [ "$MOVERSTART" == "enable" ] && [ -e "/var/run/mover.pid" ]; then
+if [ "$MOVERSTART" != "enable" ] && [ -e "/var/run/mover.pid" ]; then
     echo "mover is running; exiting" | logger -s -t "mirrorshuttle-cron"
     [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Failure" -d "The scheduled moving has failed (mover is running)." -i "alert"
     exit 0
 fi
 
-if [ "$PARITYSTART" == "enable" ] && [ -r "/var/local/emhttp/var.ini" ]; then
+if [ "$PARITYSTART" != "enable" ] && [ -r "/var/local/emhttp/var.ini" ]; then
     PARITYPOS=$(grep "mdResyncPos=" < /var/local/emhttp/var.ini | cut -d'"' -f2)
     if [ -n "$PARITYPOS" ] && [ "$PARITYPOS" -gt 0 ]; then
         echo "parity operation is running; exiting" | logger -s -t "mirrorshuttle-cron"
