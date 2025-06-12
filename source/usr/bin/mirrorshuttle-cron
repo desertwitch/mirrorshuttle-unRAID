@@ -22,7 +22,6 @@ SUBJECT="[${HOST}] MirrorShuttle:"
 
 if [ ! -r "/boot/config/plugins/mirsht/mirsht.cfg" ]; then
     echo "configuration file cannot be read; exiting" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Failure" -d "The scheduled moving has failed (unreadable plugin configuration)." -i "alert"
     exit 0
 fi
 
