@@ -21,7 +21,7 @@ DOCROOT="/usr/local/emhttp/plugins/mirsht"
 echo "Resetting MirrorShuttle configuration..."
 echo "Resetting MirrorShuttle configuration..." | logger -t "mirrorshuttle-plugin"
 
-cp -f $DOCROOT/defaults/default.cfg $BOOT/mirsht.cfg
+cp -f $DOCROOT/default.cfg $BOOT/mirsht.cfg
 cp -f $DOCROOT/defaults/default.yaml $BOOT/config.yaml
 
 if [ -x /usr/local/emhttp/plugins/mirsht/scripts/write_config ]; then
