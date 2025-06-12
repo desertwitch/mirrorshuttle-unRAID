@@ -1,11 +1,11 @@
 # Path to the mirror (staging) structure; being created and moved *from*.
-# It can be a sub-path of the target, it will not be mirrored into itself.
+# It can be a sub-path of the target and will not be mirrored into itself.
 mirror: /mnt/user/incoming/mirror
 
 # Path to the target (archival) structure; being mirrored and moved *to*.
 target: /mnt/user
 
-# Paths to always be excluded; both for mirroring and moving operations.
+# Paths to always be excluded; both from mirroring and moving operations.
 exclude:
   - /mnt/user/appdata
   - /mnt/user/domains
@@ -19,18 +19,18 @@ exclude:
 direct: false
 
 # Validate files after moving; fully re-reads each file and compares hashes
-# (BLAKE3). If false, integrity is only verified in-memory without re-reads.
+# (BLAKE3). If false, integrity is only verified in-memory, without re-reads.
 verify: true
 
 # If false, exit on first failure; if true, skip non-fatal errors and continue.
 skip-failed: false
 
 # Throttle mass directory creation in init mode; brief pauses reduce filesystem
-# stress. Recommended to keep enabled on Unraid (using a union filesystem).
+# stress. Recommended to keep enabled on Unraid (as using a union filesystem).
 slow-mode: true
 
 # Preview mode; does not make any actual changes to the filesystem.
 dry-run: false
 
-# Logging verbosity; accepted options: debug, info, warn, error.
+# Logging verbosity; accepted options are: debug, info, warn, error.
 log-level: info

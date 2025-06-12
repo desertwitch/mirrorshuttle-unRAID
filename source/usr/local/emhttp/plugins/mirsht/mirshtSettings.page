@@ -104,7 +104,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>It is recommended to pick a time when ideally no other I/O (data transfer) operations are also happening.</p>
+        <p>It is recommended to pick a time when ideally no other I/O (data transfer) operations are also running.</p>
         </blockquote>
     </div>
 
@@ -120,7 +120,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>When disabled, scheduled moving will not run when the OS mover is running.</p>
+        <p>When disabled, scheduled moving will not start when the OS mover is running.</p>
         </blockquote>
 
         <dl>
@@ -134,7 +134,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>When disabled, scheduled moving will not run when a parity operation is running.</p>
+        <p>When disabled, scheduled moving will not start when a parity operation is running.</p>
         </blockquote>
 
         <dl>
@@ -148,7 +148,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>When enabled, scheduled moving will run a "init" operation after a successful "move" operation.</p>
+        <p>When enabled, scheduled moving will run an "init" operation after any successful "move" operation.</p>
         <p>Normally this is not needed, unless you change the target directory between MirrorShuttle "move" operations.</p>
         <p>The "init" operation ensures that the mirror directory structure is fully in sync with the target directory structure.</p>
         <p>Note that the "init" operation only runs with success when the mirror directory does not contain unmoved files anymore.</p>
