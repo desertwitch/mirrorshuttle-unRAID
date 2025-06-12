@@ -1,4 +1,5 @@
 # Path to the mirror (staging) structure; being created and moved *from*.
+# Can also be a sub-path of the target, then will not be mirrored in itself.
 mirror: /mnt/user/incoming/mirror
 
 # Path to the target (archival) structure; being mirrored and moved *to*.
