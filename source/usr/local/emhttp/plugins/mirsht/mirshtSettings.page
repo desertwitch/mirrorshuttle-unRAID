@@ -149,8 +149,8 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
         <blockquote class="inline_help">
         <p>When enabled, scheduled moving will run a "init" operation after a successful "move" operation.</p>
-        <p>Normally this is not needed, unless you change the target directory between MirrorShuttle move operations.</p>
-        <p>The "init" operation ensures that the mirror directory structure is in sync with the target directory structure.</p>
+        <p>Normally this is not needed, unless you change the target directory between MirrorShuttle "move" operations.</p>
+        <p>The "init" operation ensures that the mirror directory structure is fully in sync with the target directory structure.</p>
         <p>Note that the "init" operation only runs with success when the mirror directory does not contain unmoved files anymore.</p>
         </blockquote>
 
@@ -170,7 +170,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </blockquote>
 
         <dl>
-            <dt>Move on Schedule - Finished Notifications:</dt>
+            <dt>Move on Schedule - Success Notifications:</dt>
             <dd>
                 <select class="mirsht-run" id="FINISHNOTIFY" name="FINISHNOTIFY" size="1">
                     <?=mk_option($mirsht_finishnotify, "disable", "No");?>
@@ -180,7 +180,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
         </dl>
 
         <blockquote class="inline_help">
-        <p>When enabled you will receive notifications when the scheduled moving finishes (regardless of success or failure).</p>
+        <p>When enabled you will receive notifications when the scheduled moving finishes with success.</p>
         <p>The notifications will be delivered according to Unraid's system-wide notification settings.</p>
         </blockquote>
 
@@ -196,7 +196,7 @@ require_once '/usr/local/emhttp/plugins/mirsht/include/mirsht_helpers.php';
 
         <blockquote class="inline_help">
         <p>When enabled you will receive notifications when the scheduled moving encounters any failures (errors).</p>
-        <p>This setting can be useful when <strong><em>Finished Notifications</em></strong> are disabled and you want to be notified only of scheduled moving failures (errors).</p>
+        <p>This setting can be useful when <strong><em>Success Notifications</em></strong> are disabled and you want to be notified only of scheduled moving failures (errors).</p>
         <p>The notifications will be delivered according to Unraid's system-wide notification settings.</p>
         </blockquote>
     </div>
