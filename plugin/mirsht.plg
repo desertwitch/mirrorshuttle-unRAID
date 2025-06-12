@@ -3,14 +3,14 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mirsht">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2025.06.12e">
+<!ENTITY version   "2025.06.13">
 <!ENTITY launch    "Settings/mirshtOps">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/mirrorshuttle-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
 <!ENTITY pkgURL    "&gitURL;/packages">
 <!ENTITY plgPATH   "/boot/config/plugins/&name;">
-<!ENTITY plgNAME   "mirsht-2025.06.12-x86_64-6">
-<!ENTITY plgMD5    "64f0b47ebf227bf1328ae27dc66130a7">
+<!ENTITY plgNAME   "mirsht-2025.06.13-x86_64-1">
+<!ENTITY plgMD5    "da892ca32f0a6a1664ce751263cd6a38">
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
@@ -18,7 +18,7 @@
 
 <CHANGES>
 ## MirrorShuttle for UNRAID
-###2025.06.12e
+###2025.06.13
 - release note: welcome to the first version of the MirrorShuttle package.
 - release note: please report any problems in the support topic.
 </CHANGES>
