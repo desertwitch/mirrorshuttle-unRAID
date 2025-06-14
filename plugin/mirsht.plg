@@ -18,14 +18,16 @@
 
 <CHANGES>
 ## MirrorShuttle for UNRAID
+###2025.06.14
+- new: updated mirrorshuttle binaries to latest release (v0.1.5)
 ###2025.06.13
 - release note: welcome to the first version of the MirrorShuttle package.
 - release note: please report any problems in the support topic.
 </CHANGES>
 
-<FILE Name="&plgPATH;/mirrorshuttle-0.1.4-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
-<URL>&pkgURL;/mirrorshuttle-0.1.4-x86_64-1.txz</URL>
-<MD5>2262fe94ebe3a011813790136b927489</MD5>
+<FILE Name="&plgPATH;/mirrorshuttle-0.1.5-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/mirrorshuttle-0.1.5-x86_64-1.txz</URL>
+<MD5>dcc18bbf4ffb79df1aba1c81c8238906</MD5>
 </FILE>
 
 <FILE Name="&plgPATH;/&plgNAME;.txz" Min="6.10" Run="upgradepkg --install-new">
