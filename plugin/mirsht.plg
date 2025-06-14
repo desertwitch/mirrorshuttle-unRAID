@@ -3,7 +3,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mirsht">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2025.06.14a">
+<!ENTITY version   "2025.06.14b">
 <!ENTITY launch    "Settings/mirshtOps">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/mirrorshuttle-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
@@ -18,17 +18,18 @@
 
 <CHANGES>
 ## MirrorShuttle for UNRAID
-###2025.06.14a
-- new: updated binaries to latest release (v0.1.5)
+###2025.06.14b
+- new: updated binaries to latest release (v0.1.6)
 - new: added argument init-depth to control mirror depth (see docs)
+- new: changed BLAKE3 hash to SHA-256 for better reproducibility (see docs)
 ###2025.06.13
 - release note: welcome to the first version of the MirrorShuttle package.
 - release note: please report any problems in the support topic.
 </CHANGES>
 
-<FILE Name="&plgPATH;/mirrorshuttle-0.1.5-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
-<URL>&pkgURL;/mirrorshuttle-0.1.5-x86_64-1.txz</URL>
-<MD5>dcc18bbf4ffb79df1aba1c81c8238906</MD5>
+<FILE Name="&plgPATH;/mirrorshuttle-0.1.6-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/mirrorshuttle-0.1.6-x86_64-1.txz</URL>
+<MD5>83d7667a9299d1eb82b6507bffcea440</MD5>
 </FILE>
 
 <FILE Name="&plgPATH;/&plgNAME;.txz" Min="6.10" Run="upgradepkg --install-new">

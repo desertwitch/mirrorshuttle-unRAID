@@ -19,7 +19,7 @@ exclude:
 direct: false
 
 # Validate files after moving; fully re-reads each file and compares hashes
-# (BLAKE3). If false, integrity is only verified in-memory, without re-reads.
+# (SHA-256). If false, integrity is only verified in-memory, without re-reads.
 verify: true
 
 # If false, exit on first failure; if true, skip non-fatal errors and continue.
