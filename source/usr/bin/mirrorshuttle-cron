@@ -72,28 +72,28 @@ DIRS_CREATED=$(grep -c '"msg":"directory created"' /tmp/mirrorshuttle.json 2>/de
 
 case "$RET" in
   0)
-    echo "move: finished (return code: $RET - success) (created $DIRS_CREATED dirs, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
+    echo "move: finished (return code: $RET - success) (created $DIRS_CREATED directories, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
 
     # If re-init was also requested, notify of overall success later (so only once).
     if [ "$FINISHNOTIFY" == "enable" ] && [ "$INITAFTER" != "enable" ]; then
-        "$NOTIFY_BIN" -e "${EVENT}" -s "Notice ${SUBJECT} Finished" -d "The scheduled moving has finished with success (created $DIRS_CREATED dirs, moved $FILES_MOVED files)." -i "normal"
+        "$NOTIFY_BIN" -e "${EVENT}" -s "Notice ${SUBJECT} Finished" -d "The scheduled moving has finished with success (created $DIRS_CREATED directories, moved $FILES_MOVED files)." -i "normal"
     fi
     ;;
   1)
-    echo "move: finished (return code: $RET - failure) (created $DIRS_CREATED dirs, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Failure" -d "The scheduled moving has failed with errors (created $DIRS_CREATED dirs, moved $FILES_MOVED files)." -i "alert"
+    echo "move: finished (return code: $RET - failure) (created $DIRS_CREATED directories, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Failure" -d "The scheduled moving has failed with errors (created $DIRS_CREATED directories, moved $FILES_MOVED files)." -i "alert"
     ;;
   2)
-    echo "move: finished (return code: $RET - partial failure) (created $DIRS_CREATED dirs, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Partial Failure" -d "The scheduled moving has failed to move all files (created $DIRS_CREATED dirs, moved $FILES_MOVED files)." -i "alert"
+    echo "move: finished (return code: $RET - partial failure) (created $DIRS_CREATED directories, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Partial Failure" -d "The scheduled moving has failed to move all files (created $DIRS_CREATED directories, moved $FILES_MOVED files)." -i "alert"
     ;;
   4)
-    echo "move: finished (return code: $RET - invalid configuration) (created $DIRS_CREATED dirs, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Failure" -d "The scheduled moving has failed due to an invalid configuration (created $DIRS_CREATED dirs, moved $FILES_MOVED files)." -i "alert"
+    echo "move: finished (return code: $RET - invalid configuration) (created $DIRS_CREATED directories, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Failure" -d "The scheduled moving has failed due to an invalid configuration (created $DIRS_CREATED directories, moved $FILES_MOVED files)." -i "alert"
     ;;
   *)
-    echo "move: finished (return code: $RET - unexpected return code) (created $DIRS_CREATED dirs, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Failure" -d "The scheduled moving has failed with an unexpected return code (created $DIRS_CREATED dirs, moved $FILES_MOVED files)." -i "alert"
+    echo "move: finished (return code: $RET - unexpected return code) (created $DIRS_CREATED directories, moved $FILES_MOVED files)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Move Failure" -d "The scheduled moving has failed with an unexpected return code (created $DIRS_CREATED directories, moved $FILES_MOVED files)." -i "alert"
     ;;
 esac
 
@@ -115,28 +115,28 @@ DIRS_MIRRORED=$((DIRS_TOTAL - DIRS_CREATED))
 
 case "$RET" in
   0)
-    echo "re-init: finished (return code: $RET - success) (re-inited $DIRS_MIRRORED dirs)" | logger -s -t "mirrorshuttle-cron"
-    [ "$FINISHNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Notice ${SUBJECT} Finished" -d "The scheduled moving (and re-init) has finished with success (created $DIRS_CREATED dirs, moved $FILES_MOVED files, re-inited $DIRS_MIRRORED dirs)." -i "normal"
+    echo "re-init: finished (return code: $RET - success) (re-initialized $DIRS_MIRRORED directories)" | logger -s -t "mirrorshuttle-cron"
+    [ "$FINISHNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Notice ${SUBJECT} Finished" -d "The scheduled moving (and re-init) has finished with success (created $DIRS_CREATED directories, moved $FILES_MOVED files, re-initialized $DIRS_MIRRORED directories)." -i "normal"
     ;;
   1)
-    echo "re-init: finished (return code: $RET - failure) (re-inited $DIRS_MIRRORED dirs)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed with errors (created $DIRS_CREATED dirs, moved $FILES_MOVED files, re-inited $DIRS_MIRRORED dirs)." -i "alert"
+    echo "re-init: finished (return code: $RET - failure) (re-initialized $DIRS_MIRRORED directories)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed with errors (created $DIRS_CREATED directories, moved $FILES_MOVED files, re-initialized $DIRS_MIRRORED directories)." -i "alert"
     ;;
   2)
-    echo "re-init: finished (return code: $RET - partial failure) (re-inited $DIRS_MIRRORED dirs)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Partial Failure" -d "The scheduled moving (and re-init) has failed to move all files (created $DIRS_CREATED dirs, moved $FILES_MOVED files, re-inited $DIRS_MIRRORED dirs)." -i "alert"
+    echo "re-init: finished (return code: $RET - partial failure) (re-initialized $DIRS_MIRRORED directories)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Partial Failure" -d "The scheduled moving (and re-init) has failed to move all files (created $DIRS_CREATED directories, moved $FILES_MOVED files, re-initialized $DIRS_MIRRORED directories)." -i "alert"
     ;;
   3)
-    echo "re-init: finished (return code: $RET - unmoved files in mirror) (re-inited $DIRS_MIRRORED dirs)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed due to unmoved files in the mirror (created $DIRS_CREATED dirs, moved $FILES_MOVED files, re-inited $DIRS_MIRRORED dirs)." -i "alert"
+    echo "re-init: finished (return code: $RET - unmoved files in mirror) (re-initialized $DIRS_MIRRORED directories)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed due to unmoved files in the mirror (created $DIRS_CREATED directories, moved $FILES_MOVED files, re-initialized $DIRS_MIRRORED directories)." -i "alert"
     ;;
   4)
-    echo "re-init: finished (return code: $RET - invalid configuration) (re-inited $DIRS_MIRRORED dirs)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed due to an invalid configuration (created $DIRS_CREATED dirs, moved $FILES_MOVED files, re-inited $DIRS_MIRRORED dirs)." -i "alert"
+    echo "re-init: finished (return code: $RET - invalid configuration) (re-initialized $DIRS_MIRRORED directories)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed due to an invalid configuration (created $DIRS_CREATED directories, moved $FILES_MOVED files, re-initialized $DIRS_MIRRORED directories)." -i "alert"
     ;;
   *)
-    echo "re-init: finished (return code: $RET - unexpected return code) (re-inited $DIRS_MIRRORED dirs)" | logger -s -t "mirrorshuttle-cron"
-    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed with an unexpected return code (created $DIRS_CREATED dirs, moved $FILES_MOVED files, re-inited $DIRS_MIRRORED dirs)." -i "alert"
+    echo "re-init: finished (return code: $RET - unexpected return code) (re-initialized $DIRS_MIRRORED directories)" | logger -s -t "mirrorshuttle-cron"
+    [ "$ERRORNOTIFY" == "enable" ] && "$NOTIFY_BIN" -e "${EVENT}" -s "Alert ${SUBJECT} Re-Init Failure" -d "The scheduled moving (and re-init) has failed with an unexpected return code (created $DIRS_CREATED directories, moved $FILES_MOVED files, re-initialized $DIRS_MIRRORED directories)." -i "alert"
     ;;
 esac
 
