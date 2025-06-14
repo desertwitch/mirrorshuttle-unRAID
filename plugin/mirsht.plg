@@ -3,14 +3,14 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mirsht">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2025.06.14">
+<!ENTITY version   "2025.06.14a">
 <!ENTITY launch    "Settings/mirshtOps">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/mirrorshuttle-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
 <!ENTITY pkgURL    "&gitURL;/packages">
 <!ENTITY plgPATH   "/boot/config/plugins/&name;">
-<!ENTITY plgNAME   "mirsht-2025.06.14-x86_64-1">
-<!ENTITY plgMD5    "b1a0c07e137e50a5920b2021d88c6128">
+<!ENTITY plgNAME   "mirsht-2025.06.14-x86_64-2">
+<!ENTITY plgMD5    "3ee2f24b8dd2fea3d914ea789beb5f43">
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
@@ -18,8 +18,9 @@
 
 <CHANGES>
 ## MirrorShuttle for UNRAID
-###2025.06.14
+###2025.06.14a
 - new: updated binaries to latest release (v0.1.5)
+- new: added argument init-depth to control mirror depth (see docs)
 ###2025.06.13
 - release note: welcome to the first version of the MirrorShuttle package.
 - release note: please report any problems in the support topic.
