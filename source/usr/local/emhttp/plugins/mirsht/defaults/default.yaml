@@ -22,6 +22,14 @@ direct: false
 # (SHA-256). If false, integrity is only verified in-memory, without re-reads.
 verify: true
 
+# If true, skip moving directories that contain no files; helps preventing the
+# re-creation of (target) directories removed between any two move operations.
+skip-empty: true
+
+# If true, remove empty (mirror) directories when their corresponding targets
+# (no longer) exist. Downside: also removes newly created (empty) directories.
+remove-empty: false
+
 # If false, exit on first failure; if true, skip non-fatal errors and continue.
 skip-failed: false
 
