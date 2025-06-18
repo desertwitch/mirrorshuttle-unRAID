@@ -22,7 +22,7 @@
 - new: updated binaries to latest release (v0.1.8)
 - new: added argument skip-empty to avoid moving empty dirs (defaults to true)
 - new: added argument remove-empty to remove empty mirror dirs (defaults to false)
-- note: reset config to pull updated default config file, otherwise see docs for info
+- release note: reset config to pull updated default config file, otherwise see docs for info
 ###2025.06.14b
 - new: updated binaries to latest release (v0.1.6)
 - new: added argument init-depth to control mirror depth (see docs)
