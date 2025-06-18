@@ -18,6 +18,11 @@
 
 <CHANGES>
 ## MirrorShuttle for UNRAID
+###2025.06.18
+- new: updated binaries to latest release (v0.1.7)
+- new: added argument skip-empty to avoid moving empty dirs (defaults to true)
+- new: added argument remove-empty to remove empty mirror dirs (defaults to false)
+- note: reset config to pull updated default config file, otherwise see docs for info
 ###2025.06.14b
 - new: updated binaries to latest release (v0.1.6)
 - new: added argument init-depth to control mirror depth (see docs)
@@ -27,9 +32,9 @@
 - release note: please report any problems in the support topic.
 </CHANGES>
 
-<FILE Name="&plgPATH;/mirrorshuttle-0.1.6-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
-<URL>&pkgURL;/mirrorshuttle-0.1.6-x86_64-1.txz</URL>
-<MD5>83d7667a9299d1eb82b6507bffcea440</MD5>
+<FILE Name="&plgPATH;/mirrorshuttle-0.1.7-x86_64-1.txz" Min="6.10" Run="upgradepkg --install-new">
+<URL>&pkgURL;/mirrorshuttle-0.1.7-x86_64-1.txz</URL>
+<MD5>fc83ab55c1af5ddd02167ceb03c11875</MD5>
 </FILE>
 
 <FILE Name="&plgPATH;/&plgNAME;.txz" Min="6.10" Run="upgradepkg --install-new">
