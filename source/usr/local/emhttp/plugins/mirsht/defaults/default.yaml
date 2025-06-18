@@ -28,6 +28,7 @@ skip-empty: true
 
 # If true, remove empty (mirror) directories when their corresponding targets
 # (no longer) exist. Downside: also removes newly created (empty) directories.
+# It only takes effect when used together with an enabled --skip-empty option.
 remove-empty: false
 
 # If false, exit on first failure; if true, skip non-fatal errors and continue.
@@ -38,7 +39,7 @@ skip-failed: false
 slow-mode: true
 
 # A numeric value that decides how deep directories are
-# mirrored in `--mode=init`. A value of 0 mirrors only the contents
+# mirrored in --mode=init. A value of 0 mirrors only the contents
 # of the directory root, conversely negative values impose no limit.
 init-depth: -1
 
