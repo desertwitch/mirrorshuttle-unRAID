@@ -18,6 +18,8 @@
 
 <CHANGES>
 ## MirrorShuttle for UNRAID
+###2025.08.21
+- fix: make pages and dashboards compliant with new responsive UI
 ###2025.06.18a
 - new: updated binaries to latest release (v0.1.8)
 - new: added argument skip-empty to avoid moving empty dirs (defaults to true)
