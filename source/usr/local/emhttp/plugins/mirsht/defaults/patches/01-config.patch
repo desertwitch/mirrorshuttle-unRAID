@@ -1,0 +1,11 @@
+--- boot/config/plugins/mirsht/config.yaml
++++ boot/config/plugins/mirsht/config.yaml
+@@ -16,3 +16,8 @@
++# Overwrite target files if they already exist; use at your own risk.
++#
++# Default: false
++force: false
++
+ # Attempt atomic rename operations. If this fails (e.g., across filesystems),
+ # fallback to copy and remove.
+ #

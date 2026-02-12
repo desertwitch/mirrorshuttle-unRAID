@@ -12,6 +12,11 @@ exclude:
   - /mnt/user/isos
   - /mnt/user/system
 
+# Overwrite target files if they already exist; use at your own risk.
+#
+# Default: false
+force: false
+
 # Attempt atomic rename syscalls; if false, uses copy+remove instead (which is
 # safer across filesystems). Understand that enabling this setting circumvents
 # Unraid's allocation mechanisms, meaning that files will possibly stay on the

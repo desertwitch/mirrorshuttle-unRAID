@@ -24,3 +24,8 @@ chmod 755 $DOCROOT/scripts/*
 
 cp -n $DOCROOT/default.cfg $BOOT/mirsht.cfg
 cp -n $DOCROOT/defaults/default.yaml $BOOT/config.yaml
+
+# Apply patches for outdated configuration files
+if ! grep -q '^force:' $BOOT/config.yaml; then
+    patch -N -r /dev/null $BOOT/config.yaml $DOCROOT/defaults/patches/01-config.patch &>/dev/null
+fi
