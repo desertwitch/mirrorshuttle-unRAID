@@ -3,14 +3,14 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mirsht">
 <!ENTITY author    "desertwitch">
-<!ENTITY version   "2025.08.29">
+<!ENTITY version   "2026.02.13">
 <!ENTITY launch    "Settings/mirshtOps">
 <!ENTITY gitURL    "https://raw.githubusercontent.com/&author;/mirrorshuttle-unRAID/main">
 <!ENTITY pluginURL "&gitURL;/plugin/&name;.plg">
 <!ENTITY pkgURL    "&gitURL;/packages">
 <!ENTITY plgPATH   "/boot/config/plugins/&name;">
-<!ENTITY plgNAME   "mirsht-2025.08.21-x86_64-1">
-<!ENTITY plgMD5    "e807eb9fa34c1648f38901560847e50b">
+<!ENTITY plgNAME   "mirsht-2026.02.13-x86_64-1">
+<!ENTITY plgMD5    "eba99d26ed0b0fae87297fe11697f2a4">
 <!ENTITY emhttp    "/usr/local/emhttp/plugins/&name;">
 ]>
 
