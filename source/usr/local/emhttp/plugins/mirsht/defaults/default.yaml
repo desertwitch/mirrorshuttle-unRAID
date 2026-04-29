@@ -17,6 +17,11 @@ exclude:
 # Default: false
 force: false
 
+# Preserve ownership and permissions where possible.
+#
+# Default: false
+preserve-perms: false
+
 # Attempt atomic rename syscalls; if false, uses copy+remove instead (which is
 # safer across filesystems). Understand that enabling this setting circumvents
 # Unraid's allocation mechanisms, meaning that files will possibly stay on the

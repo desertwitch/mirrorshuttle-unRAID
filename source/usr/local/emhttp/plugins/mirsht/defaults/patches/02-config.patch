@@ -1,0 +1,12 @@
+diff --git a/source/usr/local/emhttp/plugins/mirsht/defaults/default.yaml b/source/usr/local/emhttp/plugins/mirsht/defaults/default.yaml
+index bd5c06d..ab6ffab 100755
+--- a/source/usr/local/emhttp/plugins/mirsht/defaults/default.yaml
++++ b/source/usr/local/emhttp/plugins/mirsht/defaults/default.yaml
+@@ -19,2 +19,7 @@ force: false
+
++# Preserve ownership and permissions where possible.
++#
++# Default: false
++preserve-perms: false
++
+ # Attempt atomic rename syscalls; if false, uses copy+remove instead (which is

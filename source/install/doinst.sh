@@ -29,3 +29,6 @@ cp -n $DOCROOT/defaults/default.yaml $BOOT/config.yaml
 if ! grep -q '^force:' $BOOT/config.yaml; then
     patch -N -r /dev/null $BOOT/config.yaml $DOCROOT/defaults/patches/01-config.patch &>/dev/null
 fi
+if ! grep -q '^preserve-perms:' $BOOT/config.yaml; then
+    patch -N -r /dev/null $BOOT/config.yaml $DOCROOT/defaults/patches/02-config.patch &>/dev/null
+fi
